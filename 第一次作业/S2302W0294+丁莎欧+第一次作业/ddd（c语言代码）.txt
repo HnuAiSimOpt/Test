@@ -1,0 +1,130 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+// 矩阵和向量的基本操作
+void matVecMult(int n, double* A, double* x, double* result) {
+    for (int i = 0; i < n; i++) {
+        result[i] = 0;
+        for (int j = 0; j < n; j++) {
+            result[i] += A[i * n + j] * x[j];
+        }
+    }
+}
+
+void vecAdd(int n, double* a, double* b, double* result) {
+    for (int i = 0; i < n; i++) {
+        result[i] = a[i] + b[i];
+    }
+}
+
+void vecSub(int n, double* a, double* b, double* result) {
+    for (int i = 0; i < n; i++) {
+        result[i] = a[i] - b[i];
+    }
+}
+
+void vecScale(int n, double* a, double scalar, double* result) {
+    for (int i = 0; i < n; i++) {
+        result[i] = a[i] * scalar;
+    }
+}
+
+double vecDot(int n, double* a, double* b) {
+    double result = 0;
+    for (int i = 0; i < n; i++) {
+        result += a[i] * b[i];
+    }
+    return result;
+}
+
+// 简单的对角预条件器
+void precondition(int n, double* M_inv, double* r, double* z) {
+    for (int i = 0; i < n; i++) {
+        z[i] = M_inv[i] * r[i];
+    }
+}
+
+// PCG算法
+void pcg(int n, double* A, double* b, double* x, double tol, int max_iter) {
+    double* r = (double*)malloc(n * sizeof(double));
+    double* z = (double*)malloc(n * sizeof(double));
+    double* p = (double*)malloc(n * sizeof(double));
+    double* Ap = (double*)malloc(n * sizeof(double));
+    double* M_inv = (double*)malloc(n * sizeof(double));
+
+    // 初始预条件矩阵M为A的对角元素的倒数
+    for (int i = 0; i < n; i++) {
+        M_inv[i] = 1.0 / A[i * n + i];
+    }
+
+    // 初始向量x = 0
+    for (int i = 0; i < n; i++) {
+        x[i] = 0;
+    }
+
+    // r = b - A * x
+    matVecMult(n, A, x, r);
+    vecSub(n, b, r, r);
+
+    precondition(n, M_inv, r, z);
+    for (int i = 0; i < n; i++) {
+        p[i] = z[i];
+    }
+
+    double rz_old = vecDot(n, r, z);
+    for (int k = 0; k < max_iter; k++) {
+        matVecMult(n, A, p, Ap);
+        double alpha = rz_old / vecDot(n, p, Ap);
+
+        double* alpha_p = (double*)malloc(n * sizeof(double));
+        vecScale(n, p, alpha, alpha_p);
+        vecAdd(n, x, alpha_p, x);
+
+        double* alpha_Ap = (double*)malloc(n * sizeof(double));
+        vecScale(n, Ap, alpha, alpha_Ap);
+        vecSub(n, r, alpha_Ap, r);
+
+        if (sqrt(vecDot(n, r, r)) < tol) {
+            break;
+        }
+
+        precondition(n, M_inv, r, z);
+        double rz_new = vecDot(n, r, z);
+        double beta = rz_new / rz_old;
+
+        double* beta_p = (double*)malloc(n * sizeof(double));
+        vecScale(n, p, beta, beta_p);
+        vecAdd(n, z, beta_p, p);
+
+        rz_old = rz_new;
+
+        free(alpha_p);
+        free(alpha_Ap);
+        free(beta_p);
+    }
+
+    free(r);
+    free(z);
+    free(p);
+    free(Ap);
+    free(M_inv);
+}
+
+int main() {
+    int n = 2;
+    double A[4] = {4, 1, 1, 3};
+    double b[2] = {1, 2};
+    double x[2];
+    double tol = 1e-6;
+    int max_iter = 100;
+
+    pcg(n, A, b, x, tol, max_iter);
+
+    printf("Solution x:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%f\n", x[i]);
+    }
+
+    return 0;
+}

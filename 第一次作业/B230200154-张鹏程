@@ -1,0 +1,48 @@
+import numpy as np
+def PCG(x,A,b,M,epsilon,P):
+    r = b - np.dot(A,x)
+    z = np.dot(np.linalg.inv(P),r)
+    beta = np.linalg.norm(z,2)
+    if beta < epsilon:
+        print(x)
+    else:
+        for m in range(M):
+            rho = np.dot(r.T,z)
+            if m == 0:
+                p = z
+            elif m > 0:
+                mju = rho / rho0
+                p = z + np.dot(mju,p)
+            q = np.dot(A,p)
+            Xi = rho / np.dot(p.T,q)
+            x = x + np.dot(Xi,p)
+            r = r - np.dot(Xi,q)
+            relres = np.linalg.norm(r,2) / beta
+            if relres < epsilon:
+                break
+            else:
+                z = np.dot(np.linalg.inv(P),r)
+                rho0 = rho
+        if relres < epsilon:
+            return x
+        else:
+            return 0
+
+def sanduijiaozhen(down, mid, up, n):
+        array_a = np.diag([down] * (n - 1), -1)
+        c = range(mid + 1)
+        c = c[1::]
+        array_b = np.diag(c)
+        array_c = np.diag([up] * (n - 1), 1)
+        matrix_A = array_a + array_b + array_c
+        return matrix_A
+
+A = sanduijiaozhen(-1, 100, -1, 100)
+b = np.dot(A, np.ones(100))
+M = 65
+epsilon = 2e-9
+x = np.zeros(100, dtype=float)
+a = range(1, 101)
+P = np.diag(a)
+y = PCG(x, A, b, M, epsilon, P)
+print(y)

@@ -1,0 +1,31 @@
+import numpy as np
+
+def PCG(A, b, x_in, M, epsilon=1e-10, max_iter=10000):
+
+    x = x_in
+    r = b - np.dot(A, x)
+    z = np.dot(np.linalg.inv(M), r)
+    p = z
+    for i in range(max_iter):
+        Ap = np.dot(A, p)
+        a = np.dot(r.T, z) / np.dot(p.T, Ap)
+        x = x + a * p
+        r_re = r - a * Ap
+        if np.linalg.norm(r_re) < epsilon:
+            break
+        z_re = np.dot(np.linalg.inv(M), r_re)
+        c = np.dot(r_re.T, z_re) / np.dot(r.T, z)
+        p = z_re + c * p
+        r = r_re
+        z = z_re
+    return x
+
+m = 10
+A = np.diag(np.linspace(1, 2, m))
+b = np.random.rand(m)
+x_in = np.random.rand(m)
+M = np.diag(np.ones(m))
+
+x = PCG(A, b, x_in, M)
+print(x)
+print(x_in)

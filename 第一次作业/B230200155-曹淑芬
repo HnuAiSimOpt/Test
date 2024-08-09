@@ -1,0 +1,27 @@
+import numpy as np
+
+def conjugate_gradient(A, b, initial_guess=None, tolerance=1e-10, max_iterations=1000):
+    if initial_guess is None:
+        x = np.zeros_like(b)
+    else:
+        x = initial_guess
+    residual = b - A.dot(x)
+    direction = residual
+    squared_residual_norm = np.dot(residual.T, residual)
+
+    for iteration in range(max_iterations):
+        matrix_times_direction = A.dot(direction)
+        step_size = squared_residual_norm / np.dot(direction.T, matrix_times_direction)
+
+        x += step_size * direction
+        residual -= step_size * matrix_times_direction
+        new_squared_residual_norm = np.dot(residual.T, residual) 
+
+        if np.sqrt(new_squared_residual_norm) < tolerance:
+            break
+
+        beta = new_squared_residual_norm / squared_residual_norm
+        direction = residual + beta * direction
+        squared_residual_norm = new_squared_residual_norm
+    
+    return x

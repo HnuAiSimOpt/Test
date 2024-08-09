@@ -1,0 +1,94 @@
+clc,clear,close all
+%本程序适用于高维二次型函数优化问题
+%二次型优化 F(X)=0.5*X'AX-B'X  <---->  解方程AX=B
+%给出PCG算法的同时，也给出了CG算法，可作为对比
+
+%初始化
+dim=900;%变量维度
+A=randn(dim);%随机产生二次项系数
+A=A'*A+0.01*eye(dim);%对称正定化
+B=rand(dim,1);%随机产生一次项系数
+w=0.0001;%终止梯度的范数
+
+%调用优化算法
+optMode=1;%选择算法类型
+switch optMode
+    case 1
+    Result=PCG_Mode(dim,A,B,w);%PCG算法
+    case 2
+    Result=CG_Mode(dim,A,B,w);%CG算法
+end
+
+%打印结果
+Result_Fx=['minFx = ',num2str(Result{1})];%目标函数最小值
+disp(Result_Fx);
+Result_x=['    x = ',num2str((Result{2})')];%变量取值
+disp(Result_x);
+Result_G=['    G = ',num2str((Result{3})')];%极值处梯度
+disp(Result_G);
+Result_k=['    k = ',num2str(Result{4})];%迭代次数
+disp(Result_k);
+
+%小结：
+%通过本程序的简单验证，可以发现，对于n维二次型优化问题，用PCG算法可一步到位寻得最优
+%而CG算法理论上需要至少1次、至多n次迭代，且由于计算机数值计算存在误差，当n较大时需要大于n次迭代才能寻得最优
+
+%PCG算法
+function Result = PCG_Mode(dim,A,B,w)
+    C=chol(A);%楚列斯基分解得到预处理矩阵
+    M=C'*C;%化为隐式，完成预处理
+
+    x0=rand(dim,1);%初始点
+    G0=A*x0-B;%初始点梯度
+    y0=inv(M)*G0;%解辅助变量y
+    D0=-y0;%初始方向,依赖初始点负梯度
+
+    x=x0;
+    G=G0;
+    y=y0;
+    D=D0;
+    k=0;
+    while norm(G,2) >= w
+          walkSizeX=(G'*y)/(D'*A*D);%步长
+          xNew=x+walkSizeX*D;%新点
+          GNew=G+walkSizeX*A*D;%新点梯度法1
+         %GNew=A*xNew-B;%新点梯度 法2
+          yNew=inv(M)*GNew;%更新辅助变量y
+          walkSizeD=(GNew'*yNew)/(G'*y);%寻找新共轭方向的步长
+          D=-yNew+walkSizeD*D;%更新共轭方向
+          %复原
+          x=xNew;
+          G=GNew;
+          y=yNew;
+          k=k+1;
+    end
+     F_X=0.5*x'*A*x-B'*x;
+     Result={F_X,x,G,k}; 
+end
+
+%CG算法
+function Result = CG_Mode(dim,A,B,w)
+    x0=rand(dim,1);%初始点
+    G0=A*x0-B;%初始点梯度
+    D0=-G0;%初始方向,依赖初始点负梯度
+
+    x=x0;
+    G=G0;
+    D=D0;
+    k=0;
+    while norm(G,2) >= w
+          walkSizeX=(G'*G)/(D'*A*D);%步长
+          xNew=x+walkSizeX*D;%新点
+          GNew=G+walkSizeX*A*D;%新点梯度 法1
+         %GNew2=A*xNew-B;%新点梯度 法2
+          walkSizeD=(GNew'*GNew)/(G'*G);%寻找新共轭方向的步长
+          D=-GNew+walkSizeD*D;%更新共轭方向
+          %复原
+          x=xNew;
+          G=GNew;
+          k=k+1;
+    end
+    F_X=0.5*x'*A*x-B'*x;
+    Result={F_X,x,G,k}; 
+end
+
