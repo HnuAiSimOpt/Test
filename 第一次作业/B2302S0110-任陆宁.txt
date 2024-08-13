@@ -1,0 +1,35 @@
+import numpy as np
+
+EPSILONG = 1e-8
+MAX_N = 1e10
+
+def solver(A, b):
+    x = np.zeros_like(b)  
+    r = b - A @ x  
+    P = r
+
+    k = 0
+    while True:
+        alpha = (r.T @ r) / (P.T @ A @ P)
+        x = x + alpha * P  # x_k+1 = x_k + \alpha P_k
+        temp = r.T @ r
+        r = r - alpha * A @ P
+        if np.linalg.norm(r) &lt; EPSILONG or k &gt; MAX_N:
+            break
+        
+        beta = (r.T @ r) / temp
+        P = r + beta * P
+        k += 1
+    return x
+
+def main():
+    
+    A = np.random.rand(10, 10)
+    A = np.dot(A.T, A) + np.eye(10)
+    b = np.ones(10)
+
+    x = solver(A, b)
+    print("解向量 x:", x)
+
+if __name__ == "__main__":
+    main()

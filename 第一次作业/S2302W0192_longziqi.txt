@@ -1,0 +1,57 @@
+import numpy as np
+
+# 定义系数矩阵 A
+A = np.array([
+    [5, 1, -5] 
+    [3, 1, -4]
+    [-2, -1, 9]
+])
+
+# 定义常数向量 b
+b = np.array([7, 5, 4])
+
+# 定义初始解向量 x0
+x0 = np.zeros(3)
+
+# 调用 PCG 算法
+x = pcg(A, b, x0, t=1e-5)
+
+
+def pcg(A, b, x0, tol=1e-12, max=1000):
+    # A ----------- 正定对称的系数矩阵
+    # b ----------- 常数向量
+    # x0 ---------- 初始解向量
+    # t --------- 误差限
+    # max ---- 最大迭代次数
+
+    n = len(b)                  # 由常数向量 b 的长度确定 n
+    x = x0                      # 初始化解向量 x
+    r = b - np.dot(A, x)        # 计算初始残差 r = b - A * x
+    z = r.copy()                # 预处理残差 z，初始时与 r 相同
+    p = z.copy()                # 初始化方向向量 p
+    rho = np.dot(r, z)          # 计算初始 rho = r' * z
+    rho0 = rho                  # 备份初始 rho 值
+
+    for i in range(max):   # 从 0 迭代到最大迭代次数
+        if np.linalg.norm(r) < t:  # 判断残差是否小于容忍度 tol
+            return x                # 若满足，返回当前解向量 x
+        
+        q = np.dot(A, p)             # 计算 q = A * p
+        alpha = rho / np.dot(p, q)   # 计算步长 alpha
+        x = x + alpha * p            # 更新解向量 x
+        r = r - alpha * q            # 更新残差向量 r
+        rhon = np.dot(r, z)       # 计算新的 rho 值
+        
+        if np.abs(rhon) < t:    # 判断新的 rho 是否小于容忍度 tol
+            return x                # 若满足，返回当前解向量 x
+        
+        beta = rhon / rho0        # 计算 beta
+        p = z + beta * p             # 更新方向向量 p
+        z = r.copy()                 # 更新 z，为新的残差 r
+        rho0 = rhon               # 更新 rho 值
+
+    return x                        # 若达到最大迭代次数，返回当前解向量 x
+
+
+# 输出解向量
+print("解:", x)

@@ -1,0 +1,41 @@
+MODEL:
+  ARCH: resnet
+#  ARCH: Vgg16
+  CLASSES: 11
+  ADA_PARAM:   # 'bn' 'gn' 'in' 'conv' 'fc' 'all'
+  #  - conv
+   - bn
+#    - gn
+#    - in
+    # - fc
+#    - all
+
+  # ADAPTATION: energy
+#  ADAPTATION: source
+#  ADAPTATION: norm
+  ADAPTATION: pl
+
+
+#  WEIGHTS: G:\TEA_weights\resnet\best_domain0_resnet18.pth
+  WEIGHTS: G:\TEA_Fault_Diagnosis\output\weights_openset\best_domain0_resnet50.pth
+#  WEIGHTS: G:\TEA_weights\resnet\best_domain1_resnet18.pth
+#  WEIGHTS: G:\TEA_weights\resnet\best_domain2_resnet18.pth
+#  WEIGHTS: G:\TEA_weights\resnet\best_domain3_resnet18.pth
+DATASET:
+  NAME: CRWU
+  IMG_SIZE: 224
+  NUM_CHANNEL: 3
+  NUM_IMAGES: 4865
+  ROOT: G:\数据集\机械故障诊断数据集\CRWU_4domain\separated_domain\1797_12K_load0_final\val
+  # ROOT: G:\数据集\机械故障诊断数据集\CRWU_4domain\separated_domain\1772_12K_load1_final\val
+  # ROOT: G:\数据集\机械故障诊断数据集\CRWU_4domain\separated_domain\1750_12K_load2_final\val
+  # ROOT: G:\数据集\机械故障诊断数据集\CRWU_4domain\separated_domain\1730_12K_load3_final\val
+
+OPTIM:
+  BATCH_SIZE: 16
+#  METHOD: Adam
+  METHOD: sgd
+  STEPS: 1
+  BETA: 0.9
+  LR: 0.0001
+  WD: 0.

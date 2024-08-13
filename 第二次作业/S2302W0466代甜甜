@@ -1,0 +1,47 @@
+import numpy as np
+from sklearn.gaussian_process import GaussianProcessRegressor
+from sklearn.gaussian_process.kernels import RBF
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+ 
+# 生成模拟数据集
+np.random.seed(0)
+n_samples = 100
+X = np.random.rand(n_samples, 1)  # 一维输入特征
+y = np.sin(10 * X) + np.cos(5 * X) + np.random.normal(scale=0.1, size=n_samples)  # 添加噪声的目标变量
+ 
+# 划分训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+ 
+# 定义高斯过程回归模型和核函数
+kernel = RBF(length_scale=1.0, length_scale_bounds=(1e-1, 10.0))  # 使用RBF核函数，并设置长度尺度的搜索范围
+gpr = GaussianProcessRegressor(kernel=kernel, alpha=1e-½, optimizer='fmin_l_bfgs_b', n_restarts_optimizer=10)
+ 
+# 训练模型
+gpr.fit(X_train, y_train)
+ 
+# 预测测试集结果
+y_pred, y_pred_std = gpr.predict(X_test, return_std=True)  # 获取预测均值和标准差（方差的平方根）
+ 
+# 计算并打印预测误差
+mse = mean_squared_error(y_test, y_pred)
+print(f'Mean Squared Error (MSE): {mse:.2f}')
+ 
+# 可视化结果
+import matplotlib.pyplot as plt
+ 
+plt.figure(figsize=(10, 6))
+plt.plot(X_train, y_train, 'o', color='gray', label='Training Data')
+plt.plot(X_test, y_test, '^', color='black', label='True Values')
+plt.plot(X_test, y_pred, '-', color='red', label='Predictions')
+plt.fill_between(X_test.ravel(), 
+                 y_pred - y_pred_std, 
+                 y_pred + y_pred_std, 
+                 alpha=0.2, color='pink',
+                 label='Standard Deviation')
+ 
+plt.title('Gaussian Process Regression with RBF Kernel')
+plt.xlabel('Input Feature')
+plt.ylabel('Target Variable')
+plt.legend()
+plt.show()

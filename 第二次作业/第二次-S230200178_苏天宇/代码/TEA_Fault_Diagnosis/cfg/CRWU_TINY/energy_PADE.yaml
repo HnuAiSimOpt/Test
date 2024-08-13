@@ -1,0 +1,42 @@
+MODEL:
+  ARCH: resnet
+#  ARCH: Vgg16
+  CLASSES: 9
+  ADA_PARAM:   # 'bn' 'gn' 'in' 'conv' 'fc' 'all'
+   - conv
+#    - bn
+#    - gn
+#    - in
+    # - fc
+#    - all
+
+  ADAPTATION: energy
+#  ADAPTATION: source
+#  ADAPTATION: norm
+#  ADAPTATION: pl
+
+
+  # WEIGHTS: G:\数据集\机械故障诊断数据集\PADE\Weights\Domain1_resnet50.pth
+  WEIGHTS: G:\数据集\机械故障诊断数据集\PADE\Weights\Domain2_resnet50.pth
+  # WEIGHTS: G:\数据集\机械故障诊断数据集\PADE\Weights\Domain3_resnet50.pth
+  # WEIGHTS: G:\数据集\机械故障诊断数据集\PADE\Weights\Domain4_resnet50.pth
+
+DATASET:
+  NAME: CRWU
+  IMG_SIZE: 224
+  NUM_CHANNEL: 3
+  NUM_IMAGES: 4865
+
+  ROOT: G:\数据集\机械故障诊断数据集\PADE\Final\Domain1\test
+  # ROOT: G:\数据集\机械故障诊断数据集\PADE\Final\Domain2\test
+  # ROOT: G:\数据集\机械故障诊断数据集\PADE\Final\Domain3\test
+  # ROOT: G:\数据集\机械故障诊断数据集\PADE\Final\Domain4\test
+
+OPTIM:
+  BATCH_SIZE: 32
+#  METHOD: Adam
+  METHOD: sgd
+  STEPS: 1
+  BETA: 0.9
+  LR: 0.0001
+  WD: 0.

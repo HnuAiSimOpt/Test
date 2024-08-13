@@ -1,0 +1,41 @@
+%x=huangjinfenge(a,b,e)
+%»Æ½ð·Ö¸î·¨
+function x=huangjinfenge(a,b,e)
+c=1;
+%step1
+while(c)
+    c=0;
+    x1=a+0.382*(b-a);
+    f1=f(x1);
+    x2=a+0.618*(b-a);
+    f2=f(x2);
+    while(1)
+        %step2
+        if(abs(b-a)<=e)
+            x=(a+b)/2;
+            return;
+        end
+        %step3
+        if(f1<f2)
+            b=x2;
+            x2=x1;
+            f2=f1;
+            x1=a+0.382*(b-a);
+            f1=f(x1);
+        else
+            if(f1<=f2)
+                a=x1;
+                b=x2;
+                c=1;
+                break;
+            else
+                a=x1;
+                x1=x2;
+                f1=f2;
+                x2=a+0.618*(b-a);
+                f2=f(x2);
+            end
+        end
+    end
+end
+ 

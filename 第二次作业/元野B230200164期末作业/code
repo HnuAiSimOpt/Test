@@ -1,0 +1,47 @@
+import numpy as np
+
+# 定义指数衰减模型
+def decay_model(params, x):
+    a, k = params
+    return a * np.exp(-k * x)
+
+# 定义残差函数
+def residuals(params, x, y):
+    return decay_model(params, x) - y
+
+# 初始参数猜测
+initial_params = [1.0, 0.01]
+
+# 模拟实验数据，这里使用文档中提到的温度和降解效率作为示例
+x_data = np.array([500, 520, 540, 560, 580, 600, 620])  # 反应温度（K）
+y_data = np.array([0.35, 0.6, 0.5, 0.1, 0.65, 0.7, 0.65])  # 二噁英降解效率
+
+# 使用数值优化方法求解最小二乘问题
+from scipy.optimize import least_squares
+
+# 执行最小二乘法优化
+result = least_squares(fun=residuals, x0=initial_params, args=(x_data, y_data))
+
+# 输出优化后的参数
+optimized_params = result.x
+print(f"Optimized parameters: a = {optimized_params[0]}, k = {optimized_params[1]}")
+
+# 可视化结果
+import matplotlib.pyplot as plt
+
+# 绘制数据点
+plt.scatter(x_data, y_data, label='Data', color='red')
+
+# 绘制拟合曲线
+x_fit = np.linspace(min(x_data), max(x_data), 100)
+y_fit = decay_model(optimized_params, x_fit)
+plt.plot(x_fit, y_fit, label='Fit', color='blue')
+
+# 显示图例和标题
+plt.legend()
+plt.title('Decay Model Fit to Data')
+plt.xlabel('Temperature (K)')
+plt.ylabel('Dioxin Degradation Efficiency')
+
+# 显示图表
+plt.show()

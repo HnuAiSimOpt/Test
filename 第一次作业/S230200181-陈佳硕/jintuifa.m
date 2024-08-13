@@ -1,0 +1,55 @@
+%进退法[a_left,c_middle,b_right]=jintuifa(x0,h)
+function  [a_left,c_middle,b_right]=jintuifa(x0,h)
+a_left=0;
+c_middle=0;
+b_right=0;
+%step1
+fx0=f(x0);
+%step2
+x1=x0+h;
+fx1=f(x1);
+if(fx1<=fx0)
+    while(1)
+        %step3
+        h=2*h;
+        if(h>100000000)
+            fprint('算法失效');
+            return;
+        end
+        x2=x1+h;
+        fx2=f(x2);
+        if(fx1<=fx2)
+            a_left=x0;
+            c_middle=x1;
+            b_right=x2;
+            return
+        end
+        %step4
+        x0=x1;
+        x1=x2;
+        fx0=fx1;
+        fx1=fx2;
+    end
+else
+    while(1)
+        %step5
+        h=2*h;
+        if(h>100000000)
+            fprint('算法失效');
+            return;
+        end
+        x2=x0-h;
+        fx2=f(x2);
+        if(fx0<=fx2)
+            a_left=x2;
+            c_middle=x0;
+            b_right=x1;
+            return
+        end
+        %step6
+        x1=x0;
+        x0=x2;
+        fx1=fx0;
+        fx0=fx2;
+    end
+end

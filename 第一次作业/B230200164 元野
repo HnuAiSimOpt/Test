@@ -1,0 +1,89 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+
+// 假设A是一个对称正定矩阵，b是一个向量，c是一个标量
+typedef std::vector<std::vector<double>> Matrix;
+typedef std::vector<double> Vector;
+
+// 计算Ax
+Vector multiply(const Matrix& A, const Vector& x) {
+    Vector result(x.size(), 0.0);
+    for (size_t i = 0; i < x.size(); ++i) {
+        for (size_t j = 0; j < x.size(); ++j) {
+            result[i] += A[i][j] * x[j];
+        }
+    }
+    return result;
+}
+
+// 计算Ax + b
+Vector add(const Matrix& A, const Vector& x, const Vector& b) {
+    return multiply(A, x) + b;
+}
+
+// 计算f(x) = x^T * A * x + b^T * x + c
+double calculateFunction(const Vector& x, const Matrix& A, const Vector& b, double c) {
+    return dot(x, multiply(A, x)) + dot(x, b) + c;
+}
+
+// 计算梯度g(x) = 2 * A * x + b
+Vector calculateGradient(const Vector& x, const Matrix& A, const Vector& b) {
+    return 2 * multiply(A, x) + b;
+}
+
+// 计算点积
+double dot(const Vector& a, const Vector& b) {
+    double sum = 0.0;
+    for (size_t i = 0; i < a.size(); ++i) {
+        sum += a[i] * b[i];
+    }
+    return sum;
+}
+
+// FR算法
+Vector frankWolfeAlgorithm(Matrix A, Vector b, double c, Vector initialPoint, int maxIterations) {
+    Vector x = initialPoint;
+    Vector g = calculateGradient(x, A, b);
+    Vector d;
+    double stepSize;
+    
+    for (int i = 0; i < maxIterations; ++i) {
+        // 定理2中提到的搜索方向d(i)是A共轭的
+        d = -g; // 负梯度方向
+        
+        // 计算步长
+        stepSize = -dot(g, g) / dot(d, multiply(A, d));
+        
+        // 更新x
+        x = x + stepSize * d;
+        
+        // 更新梯度
+        g = calculateGradient(x, A, b);
+        
+        // 如果步长非常小，可以提前终止
+        if (std::fabs(stepSize) < 1e-10) {
+            break;
+        }
+    }
+    
+    return x;
+}
+
+int main() {
+    // 示例：定义一个2x2的正定矩阵A，向量b和一个标量c
+    Matrix A = {{2, 1}, {1, 2}};
+    Vector b = {1, 1};
+    double c = 0;
+    Vector initialPoint = {0, 0}; // 初始点
+    int maxIterations = 100; // 最大迭代次数
+    
+    Vector result = frankWolfeAlgorithm(A, b, c, initialPoint, maxIterations);
+    std::cout << "Optimal point: ";
+    for (double val : result) {
+        std::cout << val << " ";
+    }
+    std::cout << std::endl;
+    
+    return 0;
+}

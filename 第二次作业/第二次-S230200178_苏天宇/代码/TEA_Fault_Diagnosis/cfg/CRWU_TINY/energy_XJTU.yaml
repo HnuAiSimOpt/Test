@@ -1,0 +1,42 @@
+MODEL:
+  ARCH: resnet
+#  ARCH: Vgg16
+  CLASSES: 9
+  ADA_PARAM:   # 'bn' 'gn' 'in' 'conv' 'fc' 'all'
+#    - conv
+#    - bn
+#    - gn
+#    - in
+    - fc
+#    - all
+  # ADAPTATION: energy
+#  ADAPTATION: source
+#  ADAPTATION: norm
+  ADAPTATION: pl
+
+
+
+  WEIGHTS: G:\TEA_Fault_Diagnosis\output\XJTU_weights\XJTU_adjust_brightness_resnet50.pth
+#  WEIGHTS: G:\TEA_Fault_Diagnosis\output\XJTU_weights\XJTU_apply_random_blur_resnet50.pth
+  # WEIGHTS: G:\TEA_Fault_Diagnosis\output\XJTU_weights\XJTU_Gaussian_resnet50.pth
+#  WEIGHTS: G:\TEA_Fault_Diagnosis\output\XJTU_weights\XJTU_origin_resnet50.pth
+
+DATASET:
+  NAME: CRWU
+  IMG_SIZE: 224
+  NUM_CHANNEL: 3
+  NUM_IMAGES: 10800
+
+  # ROOT: G:\数据集\机械故障诊断数据集\XJTU_split\XJTU_adjust_brightness
+  ROOT: G:\数据集\机械故障诊断数据集\XJTU_split\XJTU_apply_random_blur
+#  ROOT: G:\数据集\机械故障诊断数据集\XJTU_split\XJTU_Gaussian
+#  ROOT: G:\数据集\机械故障诊断数据集\XJTU_split\XJTU_origin
+
+OPTIM:
+  BATCH_SIZE: 2
+#  METHOD: Adam
+  METHOD: sgd
+  STEPS: 1
+  BETA: 0.9
+  LR: 0.01
+  WD: 0.

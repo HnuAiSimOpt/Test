@@ -1,0 +1,43 @@
+from sklearn.svm import SVC
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.preprocessing import LabelEncoder
+
+# 模拟数据集：单词及其对应的语言标签
+data = {
+    '你好': 'Chinese',
+    'hello': 'English',
+    'こんにちは': 'Japanese',
+    'Здравствуйте': 'Russian',
+    '안녕하세요': 'Korean'
+}
+
+# 准备数据集
+texts = list(data.keys())
+languages = list(data.values())
+
+# 将标签转换为数值
+label_encoder = LabelEncoder()
+encoded_languages = label_encoder.fit_transform(languages)
+
+# 特征提取：使用TF-IDF向量化文本数据
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(texts)
+
+# 创建并训练SVM模型
+model = SVC(kernel='linear')
+model.fit(X, encoded_languages)
+
+# 预测函数
+def predict_language(text, model, vectorizer, label_encoder):
+    # 将文本转换为TF-IDF特征向量
+    text_vector = vectorizer.transform([text]).toarray()  # 转换为密集数组
+    # 使用模型进行预测
+    language_code = model.predict(text_vector)
+    # 将预测的编码转换回原始标签
+    language = label_encoder.inverse_transform(language_code)[0]
+    return language
+
+# 预测单词的语言
+input_word = '你好'
+predicted_language = predict_language(input_word, model, vectorizer, label_encoder)
+print(f"The language of '{input_word}' is {predicted_language}.")

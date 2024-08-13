@@ -1,0 +1,6 @@
+﻿"P1"= 77'thickness1
+"P3"= 30'thickness3
+"P5"= 40'thickness5
+"P2"= 52'thickness2
+"P4"= 30'thickness4
+"P6"= 70'thickness6
