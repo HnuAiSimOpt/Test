@@ -1,0 +1,3594 @@
+Model {
+  Name			  "validation"
+  Version		  9.3
+  SavedCharacterEncoding  "GBK"
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.166"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+    NumProvidedFunctions    0
+    NumRequiredFunctions    0
+    NumResetEvents	    0
+    HasInitializeEvent	    0
+    HasTerminateEvent	    0
+    PreCompExecutionDomainType "Unset"
+    IsExportFunctionModel   0
+    IsArchitectureModel	    0
+    NumParameterArguments   0
+    NumExternalFileReferences 1
+    ExternalFileReference {
+      Reference		      "Solver_SF/TruckSim S-Function"
+      Path		      "validation/TruckSim S-Function"
+      SID		      "2"
+      Type		      "LIBRARY_BLOCK"
+    }
+    OrderedModelArguments   1
+  }
+  DiagnosticSuppressor	  "on"
+  LogicAnalyzerPlugin	  "on"
+  NotesPlugin		  "on"
+  SLCCPlugin		  "on"
+  WebScopes_FoundationPlugin "on"
+  EnableAccessToBaseWorkspace on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  LastSavedArchitecture	  "win64"
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [-1927.0, 43.0, 1934.0, 1046.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[1]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+	Minimized		"On"
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[2287.0, 1096.0]
+	ZoomFactor		[0.79999999999999993]
+	Offset			[3280.9484182496217, 304.91062684986923]
+      }
+      Object {
+	$PropName		"DockComponentsInfo"
+	$ObjectID		6
+	$ClassName		"Simulink.DockComponentInfo"
+	Type			"GLUE2:PropertyInspector"
+	ID			"Property Inspector"
+	Visible			[1]
+	CreateCallback		""
+	UserData		""
+	Floating		[0]
+	DockPosition		"Right"
+	Width			[512]
+	Height			[384]
+	Minimized		"On"
+      }
+      WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
+      "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAAB5AP///wAAAAEAAAAAAAAAAPwCA"
+      "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
+      "QBjAHQAbwByAAAAAAD/////AAACFgD///8AAAkcAAAEjAAAAAEAAAACAAAAAQAAAAL8AAAABAAAAAAAAAABAAAANgBjAG8AbABsAGEAcABzAGkAY"
+      "gBsAGUAUABhAG4AZQBsAFQAbwBvAGwAQgBhAHIATABlAGYAdAMAAAAA/////wAAAAAAAAAAAAAAAQAAAAEAAAA4AGMAbwBsAGwAYQBwAHMAaQBiA"
+      "GwAZQBQAGEAbgBlAGwAVABvAG8AbABCAGEAcgBSAGkAZwBoAHQDAAAAAP////8AAAAAAAAAAAAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
+      "////wEAAACR/////wAAAAAAAAAA/////wEAAAEE/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAGV/////wAAAAAAAAAA/"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAQV/////wAAAAAAAAAA/"
+      "////wEAAARN/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAAAAAAAwAAAAEAAAA6AGMAbwBsAGwAYQBwAHMAaQBiAGwAZQBQAGEAbgBlA"
+      "GwAVABvAG8AbABCAGEAcgBCAG8AdAB0AG8AbQAAAAAA/////wAAAAAAAAAA"
+    }
+  }
+  HideAutomaticNames	  on
+  Created		  "Fri Aug 18 15:06:17 2023"
+  Creator		  "cy"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "cy"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Aug 13 16:30:20 2024"
+  RTWModifiedTimeStamp	  645467243
+  ModelVersionFormat	  "1.%<AutoIncrement:166>"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "disabled"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowAllPropagatedSignalLabels	off
+  PortDataTypeDisplayFormat "AliasTypeOnly"
+  ShowEditTimeErrors	  on
+  ShowEditTimeWarnings	  on
+  ShowEditTimeAdvisorChecks off
+  ShowPortUnits		  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  VariantCondition	  off
+  ShowSubsystemDomainSpec off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ShowVisualizeInsertedRTB on
+  ShowMarkup		  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockVariantConditionDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  FunctionConnectors	  off
+  BrowserLookUnderMasks	  off
+  MultiThreadCoSim	  on
+  SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  EnablePacing		  off
+  PacingRate		  1
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    7
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "validation"
+    overrideMode_	    [0.0]
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "validation"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      []
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  OrderedModelArguments	  on
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      8
+      Version		      "19.0.0"
+      DisabledProps	      []
+      Description	      ""
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  9
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  StartTime		  "0"
+	  StopTime		  "25"
+	  AbsTol		  "auto"
+	  AutoScaleAbsTol	  on
+	  FixedStep		  "0.02"
+	  InitialStep		  "auto"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  EnableMultiTasking	  off
+	  ConcurrentTasks	  off
+	  Solver		  "VariableStepAuto"
+	  SolverName		  "VariableStepAuto"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverInfoToggleStatus  on
+	  IsAutoAppliedInSIP	  off
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	  SampleTimeProperty	  []
+	  DecoupledContinuousIntegration off
+	  MinimalZcImpactIntegration off
+	  SolverOrder		  3
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  10
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  off
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveOperatingPoint	  off
+	  SaveFormat		  "Dataset"
+	  SignalLoggingSaveFormat "Dataset"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  StreamToWorkspace	  off
+	  StreamVariableName	  "streamout"
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	  LoggingToFile		  off
+	  DatasetSignalFormat	  "timeseries"
+	  LoggingFileName	  "out.mat"
+	  LoggingIntervals	  "[-inf, inf]"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  11
+	  Version		  "19.0.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  Description		  ""
+	  Components		  []
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  DefaultParameterBehavior "Tunable"
+	  UseDivisionForNetSlopeComputation "off"
+	  GainParamInheritBuiltInType off
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  AdvancedOptControl	  ""
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  PassReuseOutputArgsThreshold 12
+	  ExpressionDepthLimit	  128
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  LifeSpan		  "auto"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "off"
+	  AccelVerboseBuild	  off
+	  OptimizeBlockOrder	  "off"
+	  OptimizeDataStoreBuffers on
+	  BusAssignmentInplaceUpdate on
+	  DifferentSizesBufferReuse off
+	  OptimizationLevel	  "level2"
+	  OptimizationPriority	  "Balanced"
+	  OptimizationCustomize	  on
+	  UseRowMajorAlgorithm	  off
+	  LabelGuidedReuse	  off
+	  MultiThreadedLoops	  off
+	  DenormalBehavior	  "GradualUnderflow"
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  12
+	  Version		  "19.0.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "UseOnlyExistingSharedCode"
+	    PropName		    "DisabledProps"
+	  }
+	  Description		  ""
+	  Components		  []
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  StringTruncationChecking "error"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Simplified"
+	  MergeDetectMultiDrivingBlocksExec "error"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  ExportedTasksRateTransMsg "none"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "error"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  UseOnlyExistingSharedCode "error"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "error"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  AllowSymbolicDim	  on
+	  RowMajorDimensionSupport off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "none"
+	  OperatingPointInterfaceChecksumMismatchMsg "warning"
+	  NonCurrentReleaseOperatingPointMsg "error"
+	  ChecksumConsistencyForSSReuse	"none"
+	  PregeneratedLibrarySubsystemCodeDiagnostic "warning"
+	  MatchCodeGenerationContextForUpdateDiagram "none"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  SymbolicDimMinMaxWarning "warning"
+	  LossOfSymbolicDimsSimulationWarning "warning"
+	  LossOfSymbolicDimsCodeGenerationWarning "error"
+	  SymbolicDimsDataTypeCodeGenerationDiagnostic "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "error"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "error"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnreachableExecutionPathDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  SFOutputUsedAsStateInMooreChartDiag "error"
+	  SFTemporalDelaySmallerThanSampleTimeDiag "warning"
+	  SFSelfTransitionDiag	  "warning"
+	  SFExecutionAtInitializationDiag "warning"
+	  SFMachineParentedDataDiag "warning"
+	  IntegerSaturationMsg	  "warning"
+	  AllowedUnitSystems	  "all"
+	  UnitsInconsistencyMsg	  "warning"
+	  AllowAutomaticUnitConversions	on
+	  RCSCRenamedMsg	  "warning"
+	  RCSCObservableMsg	  "warning"
+	  ForceCombineOutputUpdateInSim	off
+	  UnitDatabase		  ""
+	  UnderSpecifiedDimensionMsg "none"
+	  DebugExecutionForFMUViaOutOfProcess off
+	  ArithmeticOperatorsInVariantConditions "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  13
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  64
+	  ProdBitPerSizeT	  64
+	  ProdBitPerPtrDiffT	  64
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "Float"
+	  ProdIntDivRoundTo	  "Zero"
+	  ProdEndianess		  "LittleEndian"
+	  ProdWordSize		  64
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "Intel->x86-64 (Windows64)"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetBitPerSizeT	  32
+	  TargetBitPerPtrDiffT	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	  UseEmbeddedCoderFeatures on
+	  UseSimulinkCoderFeatures on
+	  HardwareBoardFeatureSet "EmbeddedCoderHSP"
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  14
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  EnableRefExpFcnMdlSchedulingChecks on
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelDependencies	  ""
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel on
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  15
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  SimCustomSourceCode	  ""
+	  SimCustomHeaderCode	  ""
+	  SimCustomInitializer	  ""
+	  SimCustomTerminator	  ""
+	  SimReservedNameArray	  []
+	  SimUserSources	  ""
+	  SimUserIncludeDirs	  ""
+	  SimUserLibraries	  ""
+	  SimUserDefines	  ""
+	  SimCustomCompilerFlags  ""
+	  SimCustomLinkerFlags	  ""
+	  SFSimEcho		  on
+	  SimCtrlC		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  on
+	  SimParseCustomCode	  on
+	  SimAnalyzeCustomCode	  off
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	  ModelFunctionsGlobalVisibility "on"
+	  CompileTimeRecursionLimit 50
+	  EnableRuntimeRecursion  on
+	  MATLABDynamicMemAlloc	  on
+	  MATLABDynamicMemAllocThreshold 65536
+	  CustomCodeFunctionArrayLayout	[]
+	  DefaultCustomCodeFunctionArrayLayout "NotSpecified"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  16
+	  Version		  "19.0.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    16
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateMissedCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    Cell		    "CodeExecutionProfiling"
+	    Cell		    "CodeProfilingSaveOptions"
+	    Cell		    "CodeProfilingInstrumentation"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  HardwareBoard		  "None"
+	  ShowCustomHardwareApp	  off
+	  ShowEmbeddedHardwareApp off
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
+	  GenerateReport	  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  RTWBuildHooks		  []
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  RTWUseLocalCustomCode	  on
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomDefine		  ""
+	  CustomBLASCallback	  ""
+	  CustomLAPACKCallback	  ""
+	  CustomFFTCallback	  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  CustomToolchainOptions  []
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation "off"
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  GenerateMissedCodeReplacementReport off
+	  RTWCompilerOptimization "off"
+	  ObjectivePriorities	  []
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      17
+	      Version		      "19.0.0"
+	      Array {
+		Type			"Cell"
+		Dimension		28
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"BlockCommentType"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InternalIdentifier"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrModelFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"CustomSymbolStrUtil"
+		Cell			"CustomSymbolStrEmxType"
+		Cell			"CustomSymbolStrEmxFcn"
+		Cell			"CustomUserTokenString"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      Description	      ""
+	      Components	      []
+	      Comment		      ""
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      MangleLength	      1
+	      SharedChecksumLength    8
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrModelFcn "$R$N"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      CustomSymbolStrEmxType  "emxArray_$M$N"
+	      CustomSymbolStrEmxFcn   "emx$M$N"
+	      CustomUserTokenString   ""
+	      CustomCommentsFcn	      ""
+	      DefineNamingRule	      "None"
+	      DefineNamingFcn	      ""
+	      ParamNamingRule	      "None"
+	      ParamNamingFcn	      ""
+	      SignalNamingRule	      "None"
+	      SignalNamingFcn	      ""
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      BlockCommentType	      "BlockPathComment"
+	      StateflowObjectComments off
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifierFile  ""
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	      ReservedNameArray	      []
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      18
+	      Version		      "19.0.0"
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"ExistingSharedCode"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"GenerateAllocFcn"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"RemoveDisableFunc"
+		Cell			"RemoveResetFunc"
+		Cell			"PreserveStateflowLocalDataDimensions"
+		PropName		"DisabledProps"
+	      }
+	      Description	      ""
+	      Components	      []
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C99 (ISO)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      MultiwordTypeDef	      "System defined"
+	      MultiwordLength	      2048
+	      DynamicStringBufferSize 256
+	      GenerateFullHeader      on
+	      InferredTypesCompatibility off
+	      ExistingSharedCode      ""
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Use local settings"
+	      CombineOutputUpdateFcns on
+	      CombineSignalStateStructs	off
+	      GroupInternalDataByFunction off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
+	      PurelyIntegerCode	      off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      RemoveDisableFunc	      off
+	      RemoveResetFunc	      off
+	      SupportVariableSizeSignals off
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      PreserveStateflowLocalDataDimensions off
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      MDXCompliant	      off
+	      GRTInterface	      off
+	      GenerateAllocFcn	      off
+	      UseToolchainInfoCompliant	on
+	      GenerateSharedConstants on
+	      CoderGroups	      []
+	      AccessMethods	      []
+	      LookupTableObjectStructAxisOrder "1,2,3,4,..."
+	      LUTObjectStructOrderExplicitValues "Size,Breakpoints,Table"
+	      LUTObjectStructOrderEvenSpacing "Size,Breakpoints,Table"
+	      ArrayLayout	      "Column-major"
+	      UnsupportedSFcnMsg      "error"
+	      ERTHeaderFileRootName   "$R$E"
+	      ERTSourceFileRootName   "$R$E"
+	      ERTDataFileRootName     "$R_data"
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeMexArgs	      ""
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SlCovCC.ConfigComp {
+	  $ObjectID		  19
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  "Simulink Coverage Configuration Component"
+	  Components		  []
+	  Name			  "Simulink Coverage"
+	  CovEnable		  off
+	  CovScope		  "EntireSystem"
+	  CovIncludeTopModel	  on
+	  RecordCoverage	  off
+	  CovPath		  "/"
+	  CovSaveName		  "covdata"
+	  CovCompData		  ""
+	  CovMetricSettings	  "dwe"
+	  CovFilter		  ""
+	  CovHTMLOptions	  ""
+	  CovNameIncrementing	  off
+	  CovHtmlReporting	  off
+	  CovForceBlockReductionOff on
+	  CovEnableCumulative	  on
+	  CovSaveCumulativeToWorkspaceVar off
+	  CovSaveSingleToWorkspaceVar off
+	  CovCumulativeVarName	  "covCumulativeData"
+	  CovCumulativeReport	  off
+	  CovSaveOutputData	  on
+	  CovOutputDir		  "slcov_output/$ModelName$"
+	  CovDataFileName	  "$ModelName$_cvdata"
+	  CovShowResultsExplorer  on
+	  CovReportOnPause	  on
+	  CovModelRefEnable	  "off"
+	  CovModelRefExcluded	  ""
+	  CovExternalEMLEnable	  on
+	  CovSFcnEnable		  on
+	  CovBoundaryAbsTol	  1e-05
+	  CovBoundaryRelTol	  0.01
+	  CovUseTimeInterval	  off
+	  CovStartTime		  0
+	  CovStopTime		  0
+	  CovMcdcMode		  "Masking"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    [ 145, 124, 1135, 794 ]
+      ExtraOptions	      ""
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    8
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    20
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    HideAutomaticName	    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "left"
+    VerticalAlignment	    "top"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    MarkupType		    "model"
+    UseDisplayTextAsClickCallback off
+    AnnotationType	    "note_annotation"
+    FixedHeight		    off
+    FixedWidth		    off
+    Interpreter		    "off"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "opaque"
+    RunInitForIconRedraw    "analyze"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Clock
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      From
+      GotoTag		      "A"
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Goto
+      GotoTag		      "A"
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      Unit		      "inherit"
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      Unit		      "inherit"
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      EnsureOutportIsVirtual  off
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+      MustResolveToSignalObject	off
+      OutputWhenUnConnected   off
+      OutputWhenUnconnectedValue "0"
+      VectorParamsAs1DForOutWhenUnconnected off
+    }
+    Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      MultiThreadCoSim	      "auto"
+    }
+    Block {
+      BlockType		      Scope
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      ScheduleAs	      "Sample time"
+      SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
+      SFBlockType	      "NONE"
+      VariantControlMode      "Expression"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+      AllowZeroVariantControls off
+      PropagateVariantConditions off
+      TreatAsGroupedWhenPropagatingVariantConditions on
+      ContentPreviewEnabled   off
+      IsWebBlock	      off
+      IsObserver	      off
+      Latency		      "0"
+      AutoFrameSizeCalculation off
+      IsWebBlockPanel	      off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SaveFormat	      "Array"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      off
+      NumInputs		      "1"
+      SampleTime	      "0"
+    }
+  }
+  System {
+    Name		    "validation"
+    Location		    [-1927, 43, 7, 1089]
+    Open		    on
+    PortBlocksUseCompactNotation off
+    SetExecutionDomain	    off
+    ExecutionDomainType	    "Deduce"
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "80"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "469"
+    SimulinkSubDomain	    "Simulink"
+    Block {
+      BlockType		      Sum
+      Name		      "Add"
+      SID		      "16"
+      Ports		      [2, 1]
+      Position		      [4030, 724, 4045, 771]
+      ZOrder		      18
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ax_sensor_generate"
+      SID		      "361"
+      Ports		      [2, 1]
+      Position		      [3740, 1081, 3855, 1134]
+      ZOrder		      329
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      ContentPreviewEnabled   on
+      System {
+	Name			"Ax_sensor_generate"
+	Location		[223, 338, 826, 833]
+	Open			off
+	PortBlocksUseCompactNotation off
+	SetExecutionDomain	off
+	ExecutionDomainType	"Deduce"
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"22"
+	SimulinkSubDomain	"Simulink"
+	Block {
+	  BlockType		  Inport
+	  Name			  "slope"
+	  SID			  "361::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "ax"
+	  SID			  "361::22"
+	  Position		  [20, 136, 40, 154]
+	  ZOrder		  13
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "361::20"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  11
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "361::19"
+	  Tag			  "Stateflow S-Function validation 2"
+	  Ports			  [2, 2]
+	  Position		  [180, 100, 230, 160]
+	  ZOrder		  10
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[2 2]"
+	  SFunctionDeploymentMode off
+	  EnableBusSupport	  on
+	  SFcnIsStateOwnerBlock	  off
+	  Port {
+	    PortNumber		    2
+	    Name		    "Ax_sensor"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "361::21"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  12
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Ax_sensor"
+	  SID			  "361::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  9
+	  SrcBlock		  "slope"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  10
+	  SrcBlock		  "ax"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Ax_sensor"
+	  ZOrder		  11
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "Ax_sensor"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  12
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  13
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Az_sensor_generate"
+      SID		      "365"
+      Ports		      [1, 1]
+      Position		      [3740, 1154, 3855, 1196]
+      ZOrder		      333
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      ContentPreviewEnabled   on
+      System {
+	Name			"Az_sensor_generate"
+	Location		[223, 338, 826, 833]
+	Open			off
+	PortBlocksUseCompactNotation off
+	SetExecutionDomain	off
+	ExecutionDomainType	"Deduce"
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"21"
+	SimulinkSubDomain	"Simulink"
+	Block {
+	  BlockType		  Inport
+	  Name			  "slope"
+	  SID			  "365::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "365::20"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  11
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "365::19"
+	  Tag			  "Stateflow S-Function validation 1"
+	  Ports			  [1, 2]
+	  Position		  [180, 100, 230, 160]
+	  ZOrder		  10
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 2]"
+	  SFunctionDeploymentMode off
+	  EnableBusSupport	  on
+	  SFcnIsStateOwnerBlock	  off
+	  Port {
+	    PortNumber		    2
+	    Name		    "Az_sensor"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "365::21"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  12
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Az_sensor"
+	  SID			  "365::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "slope"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Az_sensor"
+	  ZOrder		  6
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "Az_sensor"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      SID		      "429"
+      Position		      [4930, 1010, 4950, 1030]
+      ZOrder		      398
+      Port {
+	PortNumber		1
+	Name			"time"
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant10"
+      SID		      "372"
+      Position		      [4740, 675, 4770, 695]
+      ZOrder		      340
+      Value		      "6900"
+      Port {
+	PortNumber		1
+	Name			"m_ref"
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant11"
+      SID		      "450"
+      Position		      [4930, 710, 4960, 730]
+      ZOrder		      422
+      Value		      "6900"
+      Port {
+	PortNumber		1
+	Name			"m_ref"
+      }
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux"
+      SID		      "4"
+      Ports		      [1, 18]
+      Position		      [3805, 627, 3810, 1068]
+      ZOrder		      3
+      ShowName		      off
+      Outputs		      "18"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"Throttle"
+      }
+      Port {
+	PortNumber		2
+	Name			"Pbk_Con"
+      }
+      Port {
+	PortNumber		3
+	Name			"M_EngOut"
+      }
+      Port {
+	PortNumber		4
+	Name			"M_Trans"
+      }
+      Port {
+	PortNumber		5
+	Name			"Fx_A1"
+      }
+      Port {
+	PortNumber		6
+	Name			"Fx_A2"
+      }
+      Port {
+	PortNumber		7
+	Name			"VxTarget"
+      }
+      Port {
+	PortNumber		8
+	Name			"Vx"
+      }
+      Port {
+	PortNumber		9
+	Name			"Ax"
+      }
+      Port {
+	PortNumber		10
+	Name			"Ay"
+      }
+      Port {
+	PortNumber		11
+	Name			"PtchGnd"
+      }
+      Port {
+	PortNumber		12
+	Name			"Pitch"
+      }
+      Port {
+	PortNumber		13
+	Name			"Fx_Air"
+      }
+      Port {
+	PortNumber		14
+	Name			"BetaAir"
+      }
+      Port {
+	PortNumber		15
+	Name			"My_RR_L1"
+      }
+      Port {
+	PortNumber		16
+	Name			"My_RR_L2"
+      }
+      Port {
+	PortNumber		17
+	Name			"My_RR_R1"
+      }
+      Port {
+	PortNumber		18
+	Name			"My_RR_R2"
+      }
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux10"
+      SID		      "438"
+      Ports		      [1, 3]
+      Position		      [4515, 943, 4520, 1017]
+      ZOrder		      408
+      ShowName		      off
+      Outputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux9"
+      SID		      "430"
+      Ports		      [1, 3]
+      Position		      [4505, 668, 4510, 742]
+      ZOrder		      399
+      ShowName		      off
+      Outputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From2"
+      SID		      "58"
+      Position		      [3950, 725, 4005, 745]
+      ZOrder		      60
+      GotoTag		      "Fx_A1"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From3"
+      SID		      "59"
+      Position		      [3950, 750, 4005, 770]
+      ZOrder		      61
+      GotoTag		      "Fx_A2"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From58"
+      SID		      "355"
+      Position		      [4175, 650, 4230, 670]
+      ZOrder		      325
+      GotoTag		      "Vx"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From59"
+      SID		      "356"
+      Position		      [4175, 680, 4230, 700]
+      ZOrder		      326
+      GotoTag		      "Fx"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From60"
+      SID		      "360"
+      Position		      [3650, 1085, 3705, 1105]
+      ZOrder		      328
+      GotoTag		      "PtchGnd"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From61"
+      SID		      "362"
+      Position		      [3650, 1110, 3705, 1130]
+      ZOrder		      330
+      GotoTag		      "Ax"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From62"
+      SID		      "366"
+      Position		      [3650, 1165, 3705, 1185]
+      ZOrder		      334
+      GotoTag		      "PtchGnd"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From63"
+      SID		      "368"
+      Position		      [4175, 710, 4245, 730]
+      ZOrder		      336
+      GotoTag		      "Ax_sensor"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From64"
+      SID		      "369"
+      Position		      [4175, 740, 4245, 760]
+      ZOrder		      337
+      GotoTag		      "Az_sensor"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From65"
+      SID		      "375"
+      Position		      [4725, 700, 4780, 720]
+      ZOrder		      343
+      GotoTag		      "m_wls1"
+      Port {
+	PortNumber		1
+	Name			"m_wls1"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From66"
+      SID		      "395"
+      Position		      [4175, 895, 4230, 915]
+      ZOrder		      364
+      GotoTag		      "Vx"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From67"
+      SID		      "393"
+      Position		      [4725, 775, 4780, 795]
+      ZOrder		      380
+      GotoTag		      "m_ls"
+      Port {
+	PortNumber		1
+	Name			"m_ls"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From68"
+      SID		      "396"
+      Position		      [4175, 925, 4230, 945]
+      ZOrder		      365
+      GotoTag		      "Fx"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From69"
+      SID		      "397"
+      Position		      [4175, 955, 4245, 975]
+      ZOrder		      366
+      GotoTag		      "Ax_sensor"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From70"
+      SID		      "398"
+      Position		      [4175, 985, 4245, 1005]
+      ZOrder		      367
+      GotoTag		      "Az_sensor"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From71"
+      SID		      "401"
+      Position		      [4175, 1017, 4230, 1033]
+      ZOrder		      369
+      GotoTag		      "Ax"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From72"
+      SID		      "403"
+      Position		      [4175, 1135, 4230, 1155]
+      ZOrder		      371
+      GotoTag		      "m_ls"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From73"
+      SID		      "406"
+      Position		      [4710, 900, 4765, 920]
+      ZOrder		      374
+      GotoTag		      "PtchGnd"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From74"
+      SID		      "416"
+      Position		      [4710, 930, 4765, 950]
+      ZOrder		      385
+      GotoTag		      "slope_wls1"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From75"
+      SID		      "414"
+      Position		      [4710, 1020, 4765, 1040]
+      ZOrder		      383
+      GotoTag		      "slope_ls"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From76"
+      SID		      "436"
+      Position		      [4725, 725, 4780, 745]
+      ZOrder		      406
+      GotoTag		      "m_wls2"
+      Port {
+	PortNumber		1
+	Name			"m_wls2"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From77"
+      SID		      "451"
+      Position		      [4930, 740, 4985, 760]
+      ZOrder		      423
+      GotoTag		      "m_wls1"
+      Port {
+	PortNumber		1
+	Name			"m_wls1"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From78"
+      SID		      "452"
+      Position		      [4930, 830, 4985, 850]
+      ZOrder		      424
+      GotoTag		      "m_ls"
+      Port {
+	PortNumber		1
+	Name			"m_ls"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From79"
+      SID		      "453"
+      Position		      [4930, 770, 4985, 790]
+      ZOrder		      425
+      GotoTag		      "m_wls2"
+      Port {
+	PortNumber		1
+	Name			"m_wls2"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From80"
+      SID		      "454"
+      Position		      [4930, 800, 4985, 820]
+      ZOrder		      426
+      GotoTag		      "m_wls3"
+      Port {
+	PortNumber		1
+	Name			"m_wls3"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From81"
+      SID		      "455"
+      Position		      [4930, 860, 4985, 880]
+      ZOrder		      427
+      GotoTag		      "PtchGnd"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From82"
+      SID		      "433"
+      Position		      [4175, 1045, 4230, 1065]
+      ZOrder		      403
+      GotoTag		      "m_wls1"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From83"
+      SID		      "434"
+      Position		      [4175, 1075, 4230, 1095]
+      ZOrder		      404
+      GotoTag		      "m_wls2"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From84"
+      SID		      "435"
+      Position		      [4175, 1105, 4230, 1125]
+      ZOrder		      405
+      GotoTag		      "m_wls3"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From85"
+      SID		      "437"
+      Position		      [4725, 750, 4780, 770]
+      ZOrder		      407
+      GotoTag		      "m_wls3"
+      Port {
+	PortNumber		1
+	Name			"m_wls3"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From86"
+      SID		      "446"
+      Position		      [4710, 960, 4765, 980]
+      ZOrder		      418
+      GotoTag		      "slope_wls2"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From87"
+      SID		      "447"
+      Position		      [4710, 990, 4765, 1010]
+      ZOrder		      419
+      GotoTag		      "slope_wls3"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From88"
+      SID		      "456"
+      Position		      [4930, 890, 4985, 910]
+      ZOrder		      432
+      GotoTag		      "slope_wls1"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From89"
+      SID		      "457"
+      Position		      [4930, 980, 4985, 1000]
+      ZOrder		      430
+      GotoTag		      "slope_ls"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From90"
+      SID		      "458"
+      Position		      [4930, 920, 4985, 940]
+      ZOrder		      433
+      GotoTag		      "slope_wls2"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From91"
+      SID		      "459"
+      Position		      [4930, 950, 4985, 970]
+      ZOrder		      434
+      GotoTag		      "slope_wls3"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain29"
+      SID		      "357"
+      Position		      [4255, 647, 4295, 673]
+      ZOrder		      324
+      Gain		      "1/3.6"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain32"
+      SID		      "399"
+      Position		      [4255, 892, 4295, 918]
+      ZOrder		      363
+      Gain		      "1/3.6"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain33"
+      SID		      "402"
+      Position		      [4255, 1012, 4295, 1038]
+      ZOrder		      370
+      Gain		      "9.8"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain34"
+      SID		      "409"
+      Position		      [4795, 927, 4820, 953]
+      ZOrder		      375
+      Gain		      "180/pi"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"slope_wls1"
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain35"
+      SID		      "410"
+      Position		      [4795, 897, 4820, 923]
+      ZOrder		      379
+      Gain		      "-1"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"slope_ref"
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain36"
+      SID		      "415"
+      Position		      [4795, 1017, 4820, 1043]
+      ZOrder		      384
+      Gain		      "180/pi"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"slope_ls"
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain37"
+      SID		      "460"
+      Position		      [5015, 887, 5040, 913]
+      ZOrder		      428
+      Gain		      "180/pi"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"slope_wls1"
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain38"
+      SID		      "461"
+      Position		      [5015, 857, 5040, 883]
+      ZOrder		      429
+      Gain		      "-1"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"slope_ref"
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain39"
+      SID		      "462"
+      Position		      [5015, 977, 5040, 1003]
+      ZOrder		      431
+      Gain		      "180/pi"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"slope_ls"
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain40"
+      SID		      "448"
+      Position		      [4795, 957, 4820, 983]
+      ZOrder		      420
+      Gain		      "180/pi"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"slope_wls2"
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain41"
+      SID		      "449"
+      Position		      [4795, 987, 4820, 1013]
+      ZOrder		      421
+      Gain		      "180/pi"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"slope_wls3"
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain42"
+      SID		      "463"
+      Position		      [5015, 917, 5040, 943]
+      ZOrder		      435
+      Gain		      "180/pi"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"slope_wls2"
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain43"
+      SID		      "464"
+      Position		      [5015, 947, 5040, 973]
+      ZOrder		      436
+      Gain		      "180/pi"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"slope_wls3"
+      }
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto"
+      SID		      "36"
+      Position		      [3880, 625, 3935, 645]
+      ZOrder		      38
+      GotoTag		      "Throttle"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto1"
+      SID		      "37"
+      Position		      [3880, 650, 3935, 670]
+      ZOrder		      39
+      GotoTag		      "Pbk_Con"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto10"
+      SID		      "50"
+      Position		      [3880, 850, 3935, 870]
+      ZOrder		      52
+      GotoTag		      "Ay"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto11"
+      SID		      "51"
+      Position		      [3880, 875, 3935, 895]
+      ZOrder		      53
+      GotoTag		      "PtchGnd"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto12"
+      SID		      "52"
+      Position		      [3880, 900, 3935, 920]
+      ZOrder		      54
+      GotoTag		      "Pitch"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto13"
+      SID		      "53"
+      Position		      [3880, 925, 3935, 945]
+      ZOrder		      55
+      GotoTag		      "Fx_Air"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto14"
+      SID		      "54"
+      Position		      [3880, 950, 3935, 970]
+      ZOrder		      56
+      GotoTag		      "BetaAir"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto2"
+      SID		      "38"
+      Position		      [3880, 675, 3935, 695]
+      ZOrder		      40
+      GotoTag		      "M_EngOut"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto21"
+      SID		      "108"
+      Position		      [3880, 975, 3950, 995]
+      ZOrder		      111
+      GotoTag		      "My_RR_L1"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto22"
+      SID		      "109"
+      Position		      [3880, 1000, 3950, 1020]
+      ZOrder		      112
+      GotoTag		      "My_RR_L2"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto23"
+      SID		      "110"
+      Position		      [3880, 1025, 3950, 1045]
+      ZOrder		      113
+      GotoTag		      "My_RR_R1"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto24"
+      SID		      "111"
+      Position		      [3880, 1050, 3950, 1070]
+      ZOrder		      114
+      GotoTag		      "My_RR_R2"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto3"
+      SID		      "39"
+      Position		      [3880, 700, 3935, 720]
+      ZOrder		      41
+      GotoTag		      "M_Trans"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto4"
+      SID		      "60"
+      Position		      [4065, 740, 4120, 760]
+      ZOrder		      62
+      GotoTag		      "Fx"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto44"
+      SID		      "364"
+      Position		      [3880, 1100, 3950, 1120]
+      ZOrder		      332
+      GotoTag		      "Ax_sensor"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto45"
+      SID		      "367"
+      Position		      [3880, 1165, 3950, 1185]
+      ZOrder		      335
+      GotoTag		      "Az_sensor"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto46"
+      SID		      "371"
+      Position		      [4540, 670, 4595, 690]
+      ZOrder		      400
+      GotoTag		      "m_wls1"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto47"
+      SID		      "389"
+      Position		      [4505, 800, 4560, 820]
+      ZOrder		      357
+      GotoTag		      "m_ls"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto48"
+      SID		      "404"
+      Position		      [4515, 1060, 4570, 1080]
+      ZOrder		      372
+      GotoTag		      "slope_ls"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto49"
+      SID		      "413"
+      Position		      [4540, 945, 4595, 965]
+      ZOrder		      415
+      GotoTag		      "slope_wls1"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto5"
+      SID		      "45"
+      Position		      [3880, 725, 3935, 745]
+      ZOrder		      47
+      GotoTag		      "Fx_A1"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto50"
+      SID		      "431"
+      Position		      [4540, 695, 4595, 715]
+      ZOrder		      401
+      GotoTag		      "m_wls2"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto51"
+      SID		      "432"
+      Position		      [4540, 720, 4595, 740]
+      ZOrder		      402
+      GotoTag		      "m_wls3"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto52"
+      SID		      "444"
+      Position		      [4540, 970, 4595, 990]
+      ZOrder		      416
+      GotoTag		      "slope_wls2"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto53"
+      SID		      "445"
+      Position		      [4540, 995, 4595, 1015]
+      ZOrder		      417
+      GotoTag		      "slope_wls3"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto6"
+      SID		      "46"
+      Position		      [3880, 750, 3935, 770]
+      ZOrder		      48
+      GotoTag		      "Fx_A2"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto7"
+      SID		      "47"
+      Position		      [3880, 775, 3935, 795]
+      ZOrder		      49
+      GotoTag		      "VxTarget"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto8"
+      SID		      "48"
+      Position		      [3880, 800, 3935, 820]
+      ZOrder		      50
+      GotoTag		      "Vx"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto9"
+      SID		      "49"
+      Position		      [3880, 825, 3935, 845]
+      ZOrder		      51
+      GotoTag		      "Ax"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux10"
+      SID		      "400"
+      Ports		      [9, 1]
+      Position		      [4345, 899, 4350, 1151]
+      ZOrder		      368
+      ShowName		      off
+      Inputs		      "9"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux11"
+      SID		      "428"
+      Ports		      [11, 1]
+      Position		      [5100, 712, 5105, 1028]
+      ZOrder		      397
+      ShowName		      off
+      Inputs		      "11"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux9"
+      SID		      "370"
+      Ports		      [4, 1]
+      Position		      [4345, 641, 4350, 769]
+      ZOrder		      338
+      ShowName		      off
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "S-Function10"
+      SID		      "353"
+      Ports		      [1, 1]
+      Position		      [4405, 690, 4465, 720]
+      ZOrder		      322
+      FunctionName	      "WLS_mass"
+      SFunctionDeploymentMode off
+      EnableBusSupport	      off
+      SFcnIsStateOwnerBlock   off
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "S-Function11"
+      SID		      "377"
+      Ports		      [1, 1]
+      Position		      [4405, 795, 4465, 825]
+      ZOrder		      345
+      FunctionName	      "LS_mass"
+      SFunctionDeploymentMode off
+      EnableBusSupport	      off
+      SFcnIsStateOwnerBlock   off
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "S-Function12"
+      SID		      "394"
+      Ports		      [1, 1]
+      Position		      [4420, 1055, 4480, 1085]
+      ZOrder		      362
+      FunctionName	      "LS_slope"
+      SFunctionDeploymentMode off
+      EnableBusSupport	      off
+      SFcnIsStateOwnerBlock   off
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "S-Function13"
+      SID		      "412"
+      Ports		      [1, 1]
+      Position		      [4420, 965, 4480, 995]
+      ZOrder		      381
+      FunctionName	      "WLS_slope"
+      SFunctionDeploymentMode off
+      EnableBusSupport	      off
+      SFcnIsStateOwnerBlock   off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope28"
+      SID		      "374"
+      Ports		      [5]
+      Position		      [4845, 677, 4880, 793]
+      ZOrder		      341
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData2'),extmgr.Configuration('Visuals','Time Domain"
+      "',true,'SerializedDisplays',{struct('MinYLimReal','-862.5','MaxYLimReal','7762.5','YLabelReal','','MinYLimMag','"
+      " 0.00000','MaxYLimMag','7762.5','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColo"
+      "r',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066666666"
+      "6666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83137254"
+      "9019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6"
+      "50980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','on'),struct('Visible','on'),s"
+      "truct('Visible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',"
+      "5,'LineNames',{{'m_ref','m_wls1','m_wls2','m_wls3','m_ls'}},'ShowContent',true,'Placement',1)},'DisplayPropertyD"
+      "efaults',struct('MinYLimReal','-862.5','MaxYLimReal','7762.5','YLabelReal','','MinYLimMag',' 0.00000','MaxYLimMa"
+      "g','7762.5','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTick"
+      "Color',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.62352941176470"
+      "6 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.39215686"
+      "2745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),ex"
+      "tmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale','XY','OnceAtStop',false),extmgr.Configurat"
+      "ion('Tools','Measurements',true,'Version','2019a')),'Version','2019a','Position',[3.4 333 796 303.2],'WindowStyl"
+      "e','docked')"
+      NumInputPorts	      "5"
+      Floating		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope31"
+      SID		      "411"
+      Ports		      [5]
+      Position		      [4875, 899, 4905, 1041]
+      ZOrder		      376
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData5'),extmgr.Configuration('Visuals','Time Domain"
+      "',true,'SerializedDisplays',{struct('MinYLimReal','9.93456','MaxYLimReal','16.91371','YLabelReal','','MinYLimMag"
+      "','9.93456','MaxYLimMag','16.91371','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axes"
+      "Color',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666"
+      "66666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313"
+      "72549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686"
+      " 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','on'),struct('Visible','on"
+      "'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{}},'NumLin"
+      "es',5,'LineNames',{{'slope_ref','slope_wls1','slope_wls2','slope_wls3','slope_ls'}},'ShowContent',true,'Placemen"
+      "t',1)},'DisplayPropertyDefaults',struct('MinYLimReal','9.93456','MaxYLimReal','16.91371','YLabelReal','','MinYLi"
+      "mMag','9.93456','MaxYLimMag','16.91371','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'"
+      "AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.07450"
+      "98039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0."
+      "274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.074509803921"
+      "5686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale','XY','OnceAtSt"
+      "op',false),extmgr.Configuration('Tools','Measurements',true,'Version','2019a')),'Version','2019a','Position',[3."
+      "4 4.2 796 303.2],'WindowStyle','docked')"
+      NumInputPorts	      "5"
+      Floating		      off
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "418"
+      Ports		      [1]
+      Position		      [5125, 855, 5185, 885]
+      ZOrder		      387
+      VariableName	      "simout"
+      MaxDataPoints	      "inf"
+      FixptAsFi		      on
+      SampleTime	      "0.02"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "TruckSim S-Function"
+      SID		      "2"
+      Ports		      [1, 1]
+      Position		      [3630, 799, 3740, 901]
+      ZOrder		      1
+      Priority		      "1"
+      LibraryVersion	      "1.11"
+      FontName		      "Arial"
+      FontSize		      12
+      SourceBlock	      "Solver_SF/TruckSim S-Function"
+      SourceType	      "Vehicle math model library"
+      MultiThreadCoSim	      "auto"
+      SIMFILE		      "simfile.sim"
+    }
+    Line {
+      ZOrder		      2
+      SrcBlock		      "TruckSim S-Function"
+      SrcPort		      1
+      DstBlock		      "Demux"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Fx_Air"
+      ZOrder		      112
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      13
+      DstBlock		      "Goto13"
+      DstPort		      1
+    }
+    Line {
+      Name		      "BetaAir"
+      ZOrder		      113
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      14
+      DstBlock		      "Goto14"
+      DstPort		      1
+    }
+    Line {
+      Name		      "PtchGnd"
+      ZOrder		      110
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      11
+      DstBlock		      "Goto11"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Pitch"
+      ZOrder		      111
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      12
+      DstBlock		      "Goto12"
+      DstPort		      1
+    }
+    Line {
+      Name		      "M_Trans"
+      ZOrder		      98
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      4
+      DstBlock		      "Goto3"
+      DstPort		      1
+    }
+    Line {
+      Name		      "M_EngOut"
+      ZOrder		      97
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      3
+      DstBlock		      "Goto2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Fx_A1"
+      ZOrder		      106
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      5
+      DstBlock		      "Goto5"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Fx_A2"
+      ZOrder		      105
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      6
+      DstBlock		      "Goto6"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Vx"
+      ZOrder		      104
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      8
+      DstBlock		      "Goto8"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Pbk_Con"
+      ZOrder		      96
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      2
+      DstBlock		      "Goto1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Throttle"
+      ZOrder		      94
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      1
+      DstBlock		      "Goto"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Ax"
+      ZOrder		      149
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      9
+      DstBlock		      "Goto9"
+      DstPort		      1
+    }
+    Line {
+      Name		      "VxTarget"
+      ZOrder		      103
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      7
+      DstBlock		      "Goto7"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Ay"
+      ZOrder		      109
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      10
+      DstBlock		      "Goto10"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      114
+      SrcBlock		      "From3"
+      SrcPort		      1
+      DstBlock		      "Add"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      115
+      SrcBlock		      "From2"
+      SrcPort		      1
+      DstBlock		      "Add"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      116
+      SrcBlock		      "Add"
+      SrcPort		      1
+      DstBlock		      "Goto4"
+      DstPort		      1
+    }
+    Line {
+      Name		      "My_RR_L1"
+      ZOrder		      163
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      15
+      DstBlock		      "Goto21"
+      DstPort		      1
+    }
+    Line {
+      Name		      "My_RR_L2"
+      ZOrder		      164
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      16
+      DstBlock		      "Goto22"
+      DstPort		      1
+    }
+    Line {
+      Name		      "My_RR_R1"
+      ZOrder		      165
+      Labels		      [1, 0]
+      SrcBlock		      "Demux"
+      SrcPort		      17
+      DstBlock		      "Goto23"
+      DstPort		      1
+    }
+    Line {
+      Name		      "My_RR_R2"
+      ZOrder		      166
+      Labels		      [0, 1]
+      SrcBlock		      "Demux"
+      SrcPort		      18
+      DstBlock		      "Goto24"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      461
+      SrcBlock		      "From58"
+      SrcPort		      1
+      DstBlock		      "Gain29"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      481
+      SrcBlock		      "From59"
+      SrcPort		      1
+      DstBlock		      "Mux9"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      482
+      SrcBlock		      "Gain29"
+      SrcPort		      1
+      DstBlock		      "Mux9"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      474
+      SrcBlock		      "From60"
+      SrcPort		      1
+      DstBlock		      "Ax_sensor_generate"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      475
+      SrcBlock		      "From61"
+      SrcPort		      1
+      DstBlock		      "Ax_sensor_generate"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      477
+      SrcBlock		      "Ax_sensor_generate"
+      SrcPort		      1
+      DstBlock		      "Goto44"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      478
+      SrcBlock		      "From62"
+      SrcPort		      1
+      DstBlock		      "Az_sensor_generate"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      479
+      SrcBlock		      "Az_sensor_generate"
+      SrcPort		      1
+      DstBlock		      "Goto45"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      480
+      SrcBlock		      "Mux9"
+      SrcPort		      1
+      Points		      [19, 0]
+      Branch {
+	ZOrder			506
+	DstBlock		"S-Function10"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			505
+	Points			[0, 105]
+	DstBlock		"S-Function11"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      483
+      SrcBlock		      "From63"
+      SrcPort		      1
+      DstBlock		      "Mux9"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      484
+      SrcBlock		      "From64"
+      SrcPort		      1
+      DstBlock		      "Mux9"
+      DstPort		      4
+    }
+    Line {
+      ZOrder		      564
+      SrcBlock		      "S-Function10"
+      SrcPort		      1
+      DstBlock		      "Demux9"
+      DstPort		      1
+    }
+    Line {
+      Name		      "m_ref"
+      ZOrder		      486
+      Labels		      [1, 0]
+      SrcBlock		      "Constant10"
+      SrcPort		      1
+      DstBlock		      "Scope28"
+      DstPort		      1
+    }
+    Line {
+      Name		      "m_wls1"
+      ZOrder		      488
+      Labels		      [1, 0]
+      SrcBlock		      "From65"
+      SrcPort		      1
+      DstBlock		      "Scope28"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      507
+      SrcBlock		      "S-Function11"
+      SrcPort		      1
+      DstBlock		      "Goto47"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      511
+      SrcBlock		      "From70"
+      SrcPort		      1
+      DstBlock		      "Mux10"
+      DstPort		      4
+    }
+    Line {
+      ZOrder		      512
+      SrcBlock		      "Gain32"
+      SrcPort		      1
+      DstBlock		      "Mux10"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      513
+      SrcBlock		      "From69"
+      SrcPort		      1
+      DstBlock		      "Mux10"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      514
+      SrcBlock		      "From66"
+      SrcPort		      1
+      DstBlock		      "Gain32"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      517
+      SrcBlock		      "Mux10"
+      SrcPort		      1
+      Points		      [30, 0]
+      Branch {
+	ZOrder			569
+	Points			[0, -45]
+	DstBlock		"S-Function13"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			538
+	Points			[0, 45]
+	DstBlock		"S-Function12"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      518
+      SrcBlock		      "From68"
+      SrcPort		      1
+      DstBlock		      "Mux10"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      520
+      SrcBlock		      "From71"
+      SrcPort		      1
+      DstBlock		      "Gain33"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      521
+      SrcBlock		      "Gain33"
+      SrcPort		      1
+      DstBlock		      "Mux10"
+      DstPort		      5
+    }
+    Line {
+      ZOrder		      570
+      SrcBlock		      "From72"
+      SrcPort		      1
+      DstBlock		      "Mux10"
+      DstPort		      9
+    }
+    Line {
+      ZOrder		      523
+      SrcBlock		      "S-Function12"
+      SrcPort		      1
+      DstBlock		      "Goto48"
+      DstPort		      1
+    }
+    Line {
+      Name		      "slope_wls1"
+      ZOrder		      524
+      Labels		      [1, 0]
+      SrcBlock		      "Gain34"
+      SrcPort		      1
+      DstBlock		      "Scope31"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      528
+      SrcBlock		      "From73"
+      SrcPort		      1
+      DstBlock		      "Gain35"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      534
+      SrcBlock		      "From74"
+      SrcPort		      1
+      DstBlock		      "Gain34"
+      DstPort		      1
+    }
+    Line {
+      Name		      "slope_ref"
+      ZOrder		      527
+      Labels		      [0, 1]
+      SrcBlock		      "Gain35"
+      SrcPort		      1
+      DstBlock		      "Scope31"
+      DstPort		      1
+    }
+    Line {
+      Name		      "m_ls"
+      ZOrder		      574
+      Labels		      [1, 0]
+      SrcBlock		      "From67"
+      SrcPort		      1
+      DstBlock		      "Scope28"
+      DstPort		      5
+    }
+    Line {
+      ZOrder		      584
+      SrcBlock		      "S-Function13"
+      SrcPort		      1
+      DstBlock		      "Demux10"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      533
+      SrcBlock		      "From75"
+      SrcPort		      1
+      DstBlock		      "Gain36"
+      DstPort		      1
+    }
+    Line {
+      Name		      "slope_ls"
+      ZOrder		      575
+      Labels		      [1, 0]
+      SrcBlock		      "Gain36"
+      SrcPort		      1
+      DstBlock		      "Scope31"
+      DstPort		      5
+    }
+    Line {
+      ZOrder		      571
+      SrcBlock		      "From82"
+      SrcPort		      1
+      DstBlock		      "Mux10"
+      DstPort		      6
+    }
+    Line {
+      ZOrder		      562
+      SrcBlock		      "Mux11"
+      SrcPort		      1
+      DstBlock		      "To Workspace"
+      DstPort		      1
+    }
+    Line {
+      Name		      "time"
+      ZOrder		      600
+      Labels		      [1, 0]
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      DstBlock		      "Mux11"
+      DstPort		      11
+    }
+    Line {
+      ZOrder		      565
+      SrcBlock		      "Demux9"
+      SrcPort		      1
+      DstBlock		      "Goto46"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      566
+      SrcBlock		      "Demux9"
+      SrcPort		      3
+      DstBlock		      "Goto51"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      567
+      SrcBlock		      "Demux9"
+      SrcPort		      2
+      DstBlock		      "Goto50"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      572
+      SrcBlock		      "From83"
+      SrcPort		      1
+      DstBlock		      "Mux10"
+      DstPort		      7
+    }
+    Line {
+      ZOrder		      573
+      SrcBlock		      "From84"
+      SrcPort		      1
+      DstBlock		      "Mux10"
+      DstPort		      8
+    }
+    Line {
+      Name		      "m_wls3"
+      ZOrder		      576
+      Labels		      [1, 0]
+      SrcBlock		      "From85"
+      SrcPort		      1
+      DstBlock		      "Scope28"
+      DstPort		      4
+    }
+    Line {
+      Name		      "m_wls2"
+      ZOrder		      577
+      Labels		      [1, 0]
+      SrcBlock		      "From76"
+      SrcPort		      1
+      DstBlock		      "Scope28"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      585
+      SrcBlock		      "Demux10"
+      SrcPort		      1
+      DstBlock		      "Goto49"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      586
+      SrcBlock		      "Demux10"
+      SrcPort		      3
+      DstBlock		      "Goto53"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      587
+      SrcBlock		      "Demux10"
+      SrcPort		      2
+      DstBlock		      "Goto52"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      594
+      SrcBlock		      "From86"
+      SrcPort		      1
+      DstBlock		      "Gain40"
+      DstPort		      1
+    }
+    Line {
+      Name		      "slope_wls2"
+      ZOrder		      598
+      Labels		      [1, 0]
+      SrcBlock		      "Gain40"
+      SrcPort		      1
+      DstBlock		      "Scope31"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      595
+      SrcBlock		      "From87"
+      SrcPort		      1
+      DstBlock		      "Gain41"
+      DstPort		      1
+    }
+    Line {
+      Name		      "slope_wls3"
+      ZOrder		      599
+      Labels		      [1, 0]
+      SrcBlock		      "Gain41"
+      SrcPort		      1
+      DstBlock		      "Scope31"
+      DstPort		      4
+    }
+    Line {
+      Name		      "m_wls1"
+      ZOrder		      606
+      Labels		      [-1, 1]
+      SrcBlock		      "From77"
+      SrcPort		      1
+      DstBlock		      "Mux11"
+      DstPort		      2
+    }
+    Line {
+      Name		      "m_wls3"
+      ZOrder		      610
+      Labels		      [-1, 1]
+      SrcBlock		      "From80"
+      SrcPort		      1
+      DstBlock		      "Mux11"
+      DstPort		      4
+    }
+    Line {
+      Name		      "m_wls2"
+      ZOrder		      607
+      Labels		      [-1, 1]
+      SrcBlock		      "From79"
+      SrcPort		      1
+      DstBlock		      "Mux11"
+      DstPort		      3
+    }
+    Line {
+      Name		      "m_ref"
+      ZOrder		      608
+      Labels		      [-1, 1]
+      SrcBlock		      "Constant11"
+      SrcPort		      1
+      DstBlock		      "Mux11"
+      DstPort		      1
+    }
+    Line {
+      Name		      "m_ls"
+      ZOrder		      609
+      Labels		      [-1, 1]
+      SrcBlock		      "From78"
+      SrcPort		      1
+      DstBlock		      "Mux11"
+      DstPort		      5
+    }
+    Line {
+      ZOrder		      611
+      SrcBlock		      "From89"
+      SrcPort		      1
+      DstBlock		      "Gain39"
+      DstPort		      1
+    }
+    Line {
+      Name		      "slope_wls1"
+      ZOrder		      622
+      Labels		      [1, 0]
+      SrcBlock		      "Gain37"
+      SrcPort		      1
+      DstBlock		      "Mux11"
+      DstPort		      7
+    }
+    Line {
+      ZOrder		      613
+      SrcBlock		      "From91"
+      SrcPort		      1
+      DstBlock		      "Gain43"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      614
+      SrcBlock		      "From90"
+      SrcPort		      1
+      DstBlock		      "Gain42"
+      DstPort		      1
+    }
+    Line {
+      Name		      "slope_wls3"
+      ZOrder		      624
+      Labels		      [1, 0]
+      SrcBlock		      "Gain43"
+      SrcPort		      1
+      DstBlock		      "Mux11"
+      DstPort		      9
+    }
+    Line {
+      Name		      "slope_ref"
+      ZOrder		      623
+      Labels		      [0, 1]
+      SrcBlock		      "Gain38"
+      SrcPort		      1
+      DstBlock		      "Mux11"
+      DstPort		      6
+    }
+    Line {
+      ZOrder		      617
+      SrcBlock		      "From81"
+      SrcPort		      1
+      DstBlock		      "Gain38"
+      DstPort		      1
+    }
+    Line {
+      Name		      "slope_ls"
+      ZOrder		      626
+      Labels		      [1, 0]
+      SrcBlock		      "Gain39"
+      SrcPort		      1
+      DstBlock		      "Mux11"
+      DstPort		      10
+    }
+    Line {
+      Name		      "slope_wls2"
+      ZOrder		      621
+      Labels		      [1, 0]
+      SrcBlock		      "Gain42"
+      SrcPort		      1
+      DstBlock		      "Mux11"
+      DstPort		      8
+    }
+    Line {
+      ZOrder		      620
+      SrcBlock		      "From88"
+      SrcPort		      1
+      DstBlock		      "Gain37"
+      DstPort		      1
+    }
+    Annotation {
+      SID		      "469"
+      Position		      [3585, 485, 5225, 1235]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      on
+      FixedWidth	      on
+      ForegroundColor	      "[0.952941, 0.952941, 0.952941]"
+      BackgroundColor	      "[0.952941, 0.952941, 0.952941]"
+      DropShadow	      on
+      AnnotationType	      "area_annotation"
+      ZOrder		      1502
+      FontSize		      12
+    }
+    Annotation {
+      SID		      "468"
+      Name		      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+      "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }"
+      "\n</style></head><body style=\" font-family:'Helvetica'; font-size:10px; font-weight:400; font-style:normal;\">\n"
+      "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-inden"
+      "t:0px;\"><span style=\" font-family:'Adobe 宋体 Std L'; font-size:24px; font-weight:600;\">《工程优化》大作业——"
+      "基于加权最小二乘法的车辆质量和坡度估计</span></p></body></html>"
+      Position		      [4084, 499, 4805, 549]
+      InternalMargins	      [0, 0, 0, 0]
+      BackgroundColor	      "automatic"
+      Interpreter	      "rich"
+      ZOrder		      -2
+    }
+    Annotation {
+      SID		      "352"
+      Name		      "TruckSim数据接收"
+      Position		      [3607, 551, 4134, 1225]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      on
+      FixedWidth	      on
+      ForegroundColor	      "[0.901961, 0.901961, 1.000000]"
+      BackgroundColor	      "[0.901961, 0.901961, 1.000000]"
+      DropShadow	      on
+      AnnotationType	      "area_annotation"
+      ZOrder		      1506
+      FontName		      "Arial"
+      FontSize		      24
+      FontWeight	      "bold"
+    }
+    Annotation {
+      SID		      "465"
+      Name		      "绘图"
+      Position		      [4690, 545, 5192, 1224]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      on
+      FixedWidth	      on
+      ForegroundColor	      "[0.901961, 0.901961, 1.000000]"
+      BackgroundColor	      "[0.901961, 0.901961, 1.000000]"
+      DropShadow	      on
+      AnnotationType	      "area_annotation"
+      ZOrder		      1505
+      FontName		      "Arial"
+      FontSize		      24
+      FontWeight	      "bold"
+    }
+    Annotation {
+      SID		      "467"
+      Name		      "算法设计"
+      Position		      [4161, 545, 4663, 1224]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      on
+      FixedWidth	      on
+      ForegroundColor	      "[0.901961, 0.901961, 1.000000]"
+      BackgroundColor	      "[0.901961, 0.901961, 1.000000]"
+      DropShadow	      on
+      AnnotationType	      "area_annotation"
+      ZOrder		      1504
+      FontName		      "Arial"
+      FontSize		      24
+      FontWeight	      "bold"
+    }
+  }
+}
+#Finite State Machines
+#
+#   Stateflow 80000015
+#
+#
+Stateflow {
+  machine {
+    id			    1
+    name		    "validation"
+    sfVersion		    80000015
+    firstTarget		    17
+  }
+  chart {
+    id			    2
+    machine		    1
+    name		    "Az_sensor_generate"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 3 0 0]
+    viewObj		    2
+    ssIdHighWaterMark	    5
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    chartFileNumber	    1
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+    firstData		    4
+    firstTransition	    7
+    firstJunction	    6
+  }
+  state {
+    id			    3
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    2
+    treeNode		    [2 0 0 0]
+    superState		    SUBCHART
+    subviewer		    2
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function Az_sensor = fcn(slope)\nslope = slope * pi /180;\n\nAz_sensor = 9.8 * cos(slope);\n"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    4
+    ssIdNumber		    4
+    name		    "slope"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [2 0 5]
+  }
+  data {
+    id			    5
+    ssIdNumber		    5
+    name		    "Az_sensor"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [2 4 0]
+  }
+  junction {
+    id			    6
+    position		    [23.5747 49.5747 7]
+    chart		    2
+    subviewer		    2
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [2 0 0]
+  }
+  transition {
+    id			    7
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      6
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    2
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+    linkNode		    [2 0 0]
+  }
+  instance {
+    id			    8
+    machine		    1
+    name		    "Az_sensor_generate"
+    chart		    2
+  }
+  chart {
+    id			    9
+    machine		    1
+    name		    "Ax_sensor_generate"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 10 0 0]
+    viewObj		    9
+    ssIdHighWaterMark	    6
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    chartFileNumber	    2
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+    firstData		    11
+    firstTransition	    15
+    firstJunction	    14
+  }
+  state {
+    id			    10
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    9
+    treeNode		    [9 0 0 0]
+    superState		    SUBCHART
+    subviewer		    9
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function Ax_sensor = fcn(slope, ax)\nslope = slope * pi /180;\nax = ax * 9.8;\n\nAx_sensor = 9.8 "
+      "* sin(-slope) + ax;\n"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    11
+    ssIdNumber		    4
+    name		    "slope"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [9 0 12]
+  }
+  data {
+    id			    12
+    ssIdNumber		    5
+    name		    "Ax_sensor"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [9 11 13]
+  }
+  data {
+    id			    13
+    ssIdNumber		    6
+    name		    "ax"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [9 12 0]
+  }
+  junction {
+    id			    14
+    position		    [23.5747 49.5747 7]
+    chart		    9
+    subviewer		    9
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [9 0 0]
+  }
+  transition {
+    id			    15
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      14
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    9
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+    linkNode		    [9 0 0]
+  }
+  instance {
+    id			    16
+    machine		    1
+    name		    "Ax_sensor_generate"
+    chart		    9
+  }
+  target {
+    id			    17
+    machine		    1
+    name		    "sfun"
+    description		    "Default Simulink S-Function Target."
+    linkNode		    [1 0 0]
+  }
+}

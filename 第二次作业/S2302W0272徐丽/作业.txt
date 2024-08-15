@@ -1,0 +1,181 @@
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Input, Dense, concatenate
+from tensorflow.keras import backend as K
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+
+data = np.loadtxt('D:/CFD_test/rr01/export0702.csv', delimiter=',', skiprows=1)
+X = data[:, :3] 
+particle_diameter = data[:, 4]  
+particle_time = data[:, 6]  
+velocity = data[:, 7:10] 
+temperature = data[:, 11]  
+
+scaler_X = StandardScaler()
+X_scaled = scaler_X.fit_transform(X)
+
+scaler_velocity = StandardScaler()
+velocity_scaled = scaler_velocity.fit_transform(velocity)
+
+scaler_temperature = StandardScaler()
+temperature_scaled = scaler_temperature.fit_transform(temperature.reshape(-1, 1))
+
+num_samples = X.shape[0]
+train_end = int(num_samples * 0.7)
+val_end = int(num_samples * 0.85)
+
+X_train = X_scaled[:train_end]
+X_val = X_scaled[train_end:val_end]
+X_test = X_scaled[val_end:]
+
+vel_train = velocity_scaled[:train_end]
+vel_val = velocity_scaled[train_end:val_end]
+vel_test = velocity_scaled[val_end:]
+
+time_train = particle_time[:train_end]
+time_val = particle_time[train_end:val_end]
+time_test = particle_time[val_end:]
+
+temp_train = temperature_scaled[:train_end]
+temp_val = temperature_scaled[train_end:val_end]
+temp_test = temperature_scaled[val_end:]
+
+def create_pinn_model():
+    input_X = Input(shape=(3,))
+    input_time = Input(shape=(1,))
+    input_temperature = Input(shape=(1,))
+
+    inputs = concatenate([input_X, input_time, input_temperature])
+
+    dense = Dense(512, activation='relu')(inputs)
+    dense = Dense(512, activation='relu')(dense)
+    dense = Dense(512, activation='relu')(dense)
+    dense = Dense(256, activation='relu')(dense)
+    dense = Dense(256, activation='relu')(dense)
+    dense = Dense(256, activation='relu')(dense)
+    velocity_output = Dense(3)(dense)  
+
+    model = Model(inputs=[input_X, input_time, input_temperature], outputs=velocity_output)
+    return model
+
+
+def physics_loss(y_true, y_pred):
+    x, y, z, t = X[:, 0], X[:, 1], X[:, 2], particle_time
+
+    
+    v = y_pred
+    v_t = K.gradients(v, t)[0]
+    v_x = K.gradients(v, x)[0]
+    v_y = K.gradients(v, y)[0]
+    v_z = K.gradients(v, z)[0]
+
+    
+    gravity = 9.81  
+    air_density = 1.225  
+    drag_coefficient = 0.47  
+    particle_radius = particle_diameter / 2
+    particle_area = np.pi * particle_radius ** 2
+
+    
+    buoyant_force = (4 / 3) * np.pi * (particle_radius ** 3) * air_density * gravity
+    drag_force = 0.5 * drag_coefficient * air_density * (v[:, 0] ** 2 + v[:, 1] ** 2 + v[:, 2] ** 2) * particle_area
+    gravity_force = gravity * (4 / 3) * np.pi * (particle_radius ** 3) * (air_density - 1)
+
+    
+    residual_drag = v * drag_coefficient
+    residual_gravity = v_z - gravity
+
+    
+    residual = v_t + v[:, 0] * v_x + v[:, 1] * v_y + (v[:, 2] - gravity) * v_z - (buoyant_force - drag_force + gravity_force) - residual_drag - residual_gravity
+    return K.mean(K.square(residual))
+
+
+pinn_model = create_pinn_model()
+
+pinn_model.load_weights('pinn_model_weights_finetuned_v2.h5')
+
+
+loss_weights = np.array([3.0, 3.0, 1.0])
+
+def custom_loss(y_true, y_pred):
+    return K.mean(K.square((y_true - y_pred) * loss_weights))
+
+
+pinn_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.00001), loss=['mse', physics_loss], loss_weights=[1, 0.1])
+
+
+train_input_data = [X_train, time_train.reshape(-1, 1), temp_train]
+val_input_data = [X_val, time_val.reshape(-1, 1), temp_val]
+
+
+history = pinn_model.fit(train_input_data, [vel_train, np.zeros_like(vel_train)], epochs=100, batch_size=32,
+                         validation_data=(val_input_data, [vel_val, np.zeros_like(vel_val)]))
+
+
+plt.plot(history.history['loss'], label='Train Loss')
+plt.plot(history.history['val_loss'], label='Validation Loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.legend()
+plt.show()
+
+
+pinn_model.save_weights('pinn_model_weights_finetuned_v2.h5')
+
+
+test_input_data = [X_test, time_test.reshape(-1, 1), temp_test]
+predicted_velocity_scaled = pinn_model.predict(test_input_data)
+predicted_velocity = scaler_velocity.inverse_transform(predicted_velocity_scaled)
+
+
+X_test_original = scaler_X.inverse_transform(X_test)
+
+
+def update_particle_diameter(diameter, time, evaporation_rate=1e-7, min_diameter=10e-6):
+    new_diameter = np.copy(diameter)
+    evaporating_indices = new_diameter > min_diameter
+    
+    evaporation_time = time[evaporating_indices].reshape(-1)
+    new_diameter[evaporating_indices] -= evaporation_rate * evaporation_time
+    new_diameter[new_diameter < min_diameter] = min_diameter
+    return new_diameter
+
+
+def add_random_walk_and_turbulence(position, velocity, time, diameter, turbulence_intensity=0.1):
+    random_walk = np.random.normal(0, turbulence_intensity, position.shape)
+    future_position = position + velocity * time + random_walk
+    future_diameter = update_particle_diameter(diameter, time)
+    return future_position, future_diameter
+
+
+future_positions, future_diameters = add_random_walk_and_turbulence(X_test_original, predicted_velocity, time_test.reshape(-1, 1), particle_diameter[val_end:])
+
+
+error = np.abs(future_positions - X_test_original) / np.abs(X_test_original)
+mean_error = np.mean(error, axis=0)
+
+
+print(f'继续训练后的平均误差: {mean_error}')
+
+
+fig = plt.figure(figsize=(20, 10))
+
+
+ax1 = fig.add_subplot(121, projection='3d')
+sc1 = ax1.scatter(X_test_original[:, 0], X_test_original[:, 1], X_test_original[:, 2], c='blue', marker='o', s=40, alpha=0.5)
+ax1.set_title('Actual Position')
+ax1.set_xlabel('X (m)')
+ax1.set_ylabel('Y (m)')
+ax1.set_zlabel('Z (m)')
+
+
+ax2 = fig.add_subplot(122, projection='3d')
+sc2 = ax2.scatter(future_positions[:, 0], future_positions[:, 1], future_positions[:, 2], c='red', marker='o', s=40, alpha=0.5)
+ax2.set_title('Predicted Position')
+ax2.set_xlabel('X (m)')
+ax2.set_ylabel('Y (m)')
+ax2.set_zlabel('Z (m)')
+
+plt.show()
