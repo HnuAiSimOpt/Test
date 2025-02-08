@@ -1,0 +1,97 @@
+% 烧蚀参数设置
+L = 3e-6; % 单脉冲烧蚀凹坑深度上限3微米，单位: m
+den = 8760; % 密度，单位: kg/m^3
+cp = 380; % 比热容，单位: J/(kg*K)
+k = 25; % 导热系数，单位: W/(m*K)
+q = 4.23e10; % 热流密度，单位: W/m^2
+t_on = 150e-9; % 热流持续时间，单位: s
+
+
+% 第一步：空间离散化
+nx = 2000; % 取2000个节点
+dx = L / (nx - 1); % 计算空间步长
+x = linspace(0, L, nx); % 表示出节点位置
+
+% 第二步：时间离散化
+t_end = 500e-9; % 因为材料冷却很快，所以总时间大于150ns即可
+dt = 1e-10; % 取时间步长
+t = 0:dt:t_end; % 表示出时间点
+
+% 第三步：初始化温度矩阵
+T = zeros(nx, length(t));
+T(:, 1) = 300; % 初始条件：t = 0 时，温度为 300K
+
+% 第四步：组装质量矩阵 M 和刚度矩阵 K
+M = sparse(nx, nx);
+K = sparse(nx, nx);
+
+for i = 1:nx - 1
+    Me = (den * cp * dx / 6) * [2 1; 1 2];  % 局部质量矩阵
+    Ke = (k / dx) * [1 -1; -1 1];   % 局部刚度矩阵
+ 
+    M([i i + 1], [i i + 1]) = M([i i + 1], [i i + 1]) + Me;   % 全局质量矩阵
+    K([i i + 1], [i i + 1]) = K([i i + 1], [i i + 1]) + Ke;   % 全局刚度矩阵
+end
+
+% 第五步：时间推进
+for n = 1:length(t) - 1
+
+    % 左边界（第二类边界条件），按激光的作用时间分段选择热流密度（q或者0）
+    if t(n) <= t_on
+        RHS = zeros(nx, 1);
+        RHS(1) = q;
+    else
+        RHS = zeros(nx, 1);
+        RHS(1) = 0;
+    end
+    
+    % 右边界（第一类边界条件）
+    M(end, :) = 0;
+    M(end, end) = 1;
+    K(end, :) = 0;
+    RHS(end) = 300;
+    
+    % 隐式时间积分（Crank - Nicolson 方法）
+    A = (M / dt) + 0.5 * K;
+    b = (M / dt) * T(:, n) - 0.5 * K * T(:, n) + RHS;
+    
+    % 求解线性方程组
+    T(:, n + 1) = A \ b;
+end
+
+% 第六步 计算温度梯度和热流密度
+dTdx = zeros(nx, length(t));
+qx = zeros(nx, length(t));
+for n = 1:length(t)
+    dTdx(:, n) = gradient(T(:, n), dx);
+    qx(:, n) = -k * dTdx(:, n);
+end
+
+%第七步：绘图
+% 绘制温度场图
+[X, Tm] = meshgrid(x, t);
+figure;
+surf(X, Tm, T');
+xlabel('位置 (m)');
+ylabel('时间 (s)');
+zlabel('温度 (K)');
+title('一维非稳态导热温度场');
+colorbar;
+
+% 绘制温度梯度图
+figure;
+surf(X, Tm, dTdx');
+xlabel('位置 (m)');
+ylabel('时间 (s)');
+zlabel('温度梯度 (K/m)');
+title('一维非稳态导热温度梯度');
+colorbar;
+
+% 绘制热流密度图
+figure;
+surf(X, Tm, qx');
+xlabel('位置 (m)');
+ylabel('时间 (s)');
+zlabel('热通量 (W/m^2)');
+title('一维非稳态导热热流密度');
+colorbar;
